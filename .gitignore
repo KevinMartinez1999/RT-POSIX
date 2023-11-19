@@ -1,0 +1,12 @@
+# VSCode folders
+/.vscode
+
+# Compiled files
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Executables
+mars_pahtfinder
