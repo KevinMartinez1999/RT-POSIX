@@ -8,7 +8,6 @@ struct periodic_thread
 	int period;
 	int offset;
 	int wcet;
-	int priority;
 };
 
 void current_time();

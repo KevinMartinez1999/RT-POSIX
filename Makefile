@@ -5,7 +5,7 @@ LIBPTHREAD = -lpthread
 
 SETTINGS = periodic_settings
 TASKS = task_definition
-MAIN = mars_pahtfinder
+MAIN = mars_pahtfinder_sched
 
 all: $(MAIN)
 
