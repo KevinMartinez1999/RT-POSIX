@@ -22,16 +22,26 @@ void current_time()
     printf("El tiempo actual es: %ld.%06ld\n", sec, usec);
 }
 
-static inline void timespec_add_us(struct timespec *t, uint64_t d)
+void timespec_add_us(struct timespec *t, uint64_t us)
 {
-    d *= 1000;
-    d += t->tv_nsec;
-    while (d >= NSEC_PER_SEC)
+    t->tv_nsec += us * 1000;
+    if (t->tv_nsec > NSEC_PER_SEC)
     {
-        d -= NSEC_PER_SEC; // Por cada resta de NSEC_PER_SEC debe agregar un segundo al tv_sec.
-        t->tv_sec += 1;
+        t->tv_nsec -= NSEC_PER_SEC;
+        t->tv_sec++;
     }
-    t->tv_nsec = d;
+}
+
+int timespec_cmp(struct timespec *a, struct timespec *b)
+{
+    if (a->tv_sec > b->tv_sec) return 1;
+    else if (a->tv_sec < b->tv_sec) return -1;
+    else if (a->tv_sec == b->tv_sec)
+    {
+        if (a->tv_nsec > b->tv_nsec) return 1;
+        else if (a->tv_nsec == b->tv_nsec) return 0;
+        else return -1;
+    }
 }
 
 void wait_next_activation(struct periodic_thread *t)

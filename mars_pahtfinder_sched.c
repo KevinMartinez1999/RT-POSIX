@@ -95,123 +95,155 @@ int main(int argc, char *argv[])
 
 void *thread1(void *pt)
 {
-    pthread_mutex_lock(&lock);
-
     struct periodic_thread *temp = (struct periodic_thread *)pt;
 
-    temp->period = 25000;  // 25 ms
-    temp->offset = 100000; // 100 ms
-    temp->wcet = 5000;     // 5 ms
+    temp->period = 25000;   // 25 ms
+    temp->offset = 0;       // 100 ms
+    temp->wcet = 5000;      // 5 ms
 
-    start_periodic_timer(temp);
+    struct timespec next, now;
 
-    pthread_mutex_unlock(&lock);
-
+    clock_gettime(CLOCK_REALTIME, &next);
     while (1)
     {
-        wait_next_activation(temp);
+        clock_gettime(CLOCK_REALTIME, &now);
+        timespec_add_us(&next, temp->period);
+
+        if (timespec_cmp(&now, &next) > 0)
+        {
+            fprintf(stderr, "Deadline missed for theread %d\n", temp->thread_id);
+            fprintf(stderr, "now: %ld sec %ld nsec      next: %ld sec %ld nsec\n", now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            exit(-1);
+        }
+
+        clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
+
         sched_bus_task(&temp->thread_id, &temp->wcet);
     }
 
-    pthread_exit(NULL);
+    return NULL;
 }
 
 void *thread2(void *pt)
 {
-    pthread_mutex_lock(&lock);
-
     struct periodic_thread *temp = (struct periodic_thread *)pt;
 
-    temp->period = 25000;  // 25 ms
-    temp->offset = 100000; // 100 ms
-    temp->wcet = 5000;     // 5 ms
+    temp->period = 25000;
+    temp->offset = 0;
+    temp->wcet = 5000;
 
-    start_periodic_timer(temp);
+    struct timespec next, now;
 
-    pthread_mutex_unlock(&lock);
-
+    clock_gettime(CLOCK_REALTIME, &next);
     while (1)
     {
-        wait_next_activation(temp);
+        clock_gettime(CLOCK_REALTIME, &now);
+        timespec_add_us(&next, temp->period);
+
+        if (timespec_cmp(&now, &next) > 0)
+        {
+            fprintf(stderr, "Deadline missed for theread %d\n", temp->thread_id);
+            fprintf(stderr, "now: %ld sec %ld nsec      next: %ld sec %ld nsec\n", now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            exit(-1);
+        }
+
+        clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
+
         data_task(&temp->thread_id, &temp->wcet);
     }
-
-    pthread_exit(NULL);
 
     return NULL;
 }
 
 void *thread3(void *pt)
 {
-    pthread_mutex_lock(&lock);
-
     struct periodic_thread *temp = (struct periodic_thread *)pt;
 
-    temp->period = 50000;  // 50 ms
-    temp->offset = 100000; // 100 ms
-    temp->wcet = 5000;     // 5 ms
+    temp->period = 50000;
+    temp->offset = 0;
+    temp->wcet = 5000;
 
-    start_periodic_timer(temp);
+    struct timespec next, now;
 
-    pthread_mutex_unlock(&lock);
-
+    clock_gettime(CLOCK_REALTIME, &next);
     while (1)
     {
-        wait_next_activation(temp);
+        clock_gettime(CLOCK_REALTIME, &now);
+        timespec_add_us(&next, temp->period);
+
+        if (timespec_cmp(&now, &next) > 0)
+        {
+            fprintf(stderr, "Deadline missed for theread %d\n", temp->thread_id);
+            fprintf(stderr, "now: %ld sec %ld nsec      next: %ld sec %ld nsec\n", now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            exit(-1);
+        }
+
+        clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
+
         control_task(&temp->thread_id, &temp->wcet);
     }
-
-    pthread_exit(NULL);
 
     return NULL;
 }
 
 void *thread4(void *pt)
 {
-    pthread_mutex_lock(&lock);
-
     struct periodic_thread *temp = (struct periodic_thread *)pt;
 
-    temp->period = 50000;  // 50 ms
-    temp->offset = 100000; // 100 ms
-    temp->wcet = 5000;     // 5 ms
+    temp->period = 50000;
+    temp->offset = 0;
+    temp->wcet = 5000;
 
-    start_periodic_timer(temp);
+    struct timespec next, now;
 
-    pthread_mutex_unlock(&lock);
-
+    clock_gettime(CLOCK_REALTIME, &next);
     while (1)
     {
-        wait_next_activation(temp);
+        clock_gettime(CLOCK_REALTIME, &now);
+        timespec_add_us(&next, temp->period);
+
+        if (timespec_cmp(&now, &next) > 0)
+        {
+            fprintf(stderr, "Deadline missed for theread %d\n", temp->thread_id);
+            fprintf(stderr, "now: %ld sec %ld nsec      next: %ld sec %ld nsec\n", now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            exit(-1);
+        }
+
+        clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
+
         radio_task(&temp->thread_id, &temp->wcet);
     }
-
-    pthread_exit(NULL);
 
     return NULL;
 }
 
 void *thread5(void *pt)
 {
-    pthread_mutex_lock(&lock);
-
     struct periodic_thread *temp = (struct periodic_thread *)pt;
 
-    temp->period = 50000;  // 50 ms
-    temp->offset = 100000; // 100 ms
-    temp->wcet = 5000;     // 5 ms
+    temp->period = 50000;
+    temp->offset = 0;
+    temp->wcet = 5000;
 
-    start_periodic_timer(temp);
+    struct timespec next, now;
 
-    pthread_mutex_unlock(&lock);
-
+    clock_gettime(CLOCK_REALTIME, &next);
     while (1)
     {
-        wait_next_activation(temp);
+        clock_gettime(CLOCK_REALTIME, &now);
+        timespec_add_us(&next, temp->period);
+
+        if (timespec_cmp(&now, &next) > 0)
+        {
+            fprintf(stderr, "Deadline missed for theread %d\n", temp->thread_id);
+            fprintf(stderr, "now: %ld sec %ld nsec      next: %ld sec %ld nsec\n", now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            exit(-1);
+        }
+
+        clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
+
         video_task(&temp->thread_id, &temp->wcet);
     }
-
-    pthread_exit(NULL);
 
     return NULL;
 }
