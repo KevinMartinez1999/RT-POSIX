@@ -1,3 +1,9 @@
+/**
+ * @file task_definition.c
+ * @brief Definición de tareas
+ * @details Este archivo contiene las funciones para la definición de tareas.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -6,7 +12,7 @@
 
 #include "task_definition.h"
 
-static pthread_mutex_t lock;
+#define MAX_TASKS 10
 
 void *sched_bus_task(int *id, int *wcet)
 {

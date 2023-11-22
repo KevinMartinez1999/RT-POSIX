@@ -1,19 +1,23 @@
+/**
+ * @file mars_pahtfinder_sched.c
+ * @brief Ejemplo de planificación de tareas con prioridades fijas
+ * @details Este programa es un ejemplo de planificación de tareas con prioridades fijas.
+ * Se crean 5 hilos (threads) con prioridades fijas y se les asignan tareas con periodos y 
+ * tiempos de ejecución fijos. Se utiliza la política de planificación FIFO (First In First Out) 
+ * para la asignación de los hilos a los procesadores.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <pthread.h>
-#include <sched.h>
-#include <unistd.h>
-#include <semaphore.h>
-#include <time.h>
-#include <sys/time.h>
 
 #include "periodic_settings.h"
 #include "task_definition.h"
 
 #define NUM_TAREAS 5
 
-static pthread_mutex_t lock;
+// static pthread_mutex_t lock;
 
 void *thread1(void *pt);
 void *thread2(void *pt);
@@ -26,7 +30,10 @@ int main(int argc, char *argv[])
     pthread_t tareas[NUM_TAREAS];
     pthread_attr_t my_attr;
 
-    struct sched_param sched_bus_priority, data_priority, control_priority, radio_priority, video_priority;
+    struct sched_param sched_bus_priority, data_priority;
+    struct sched_param control_priority, radio_priority, video_priority;
+
+    // Inicializar prioridades de los hilos (threads)
     sched_bus_priority.sched_priority = 90;
     data_priority.sched_priority = 89;
     control_priority.sched_priority = 88;
@@ -85,7 +92,7 @@ int main(int argc, char *argv[])
         pthread_join(tareas[i], NULL);
     }
 
-    pthread_mutex_destroy(&lock);
+    // pthread_mutex_destroy(&lock);
     pthread_attr_destroy(&my_attr);
 
     pthread_exit(NULL);
@@ -120,8 +127,6 @@ void *thread1(void *pt)
 
         sched_bus_task(&temp->thread_id, &temp->wcet);
     }
-
-    return NULL;
 }
 
 void *thread2(void *pt)
@@ -151,8 +156,6 @@ void *thread2(void *pt)
 
         data_task(&temp->thread_id, &temp->wcet);
     }
-
-    return NULL;
 }
 
 void *thread3(void *pt)
@@ -182,8 +185,6 @@ void *thread3(void *pt)
 
         control_task(&temp->thread_id, &temp->wcet);
     }
-
-    return NULL;
 }
 
 void *thread4(void *pt)
@@ -213,8 +214,6 @@ void *thread4(void *pt)
 
         radio_task(&temp->thread_id, &temp->wcet);
     }
-
-    return NULL;
 }
 
 void *thread5(void *pt)
@@ -244,6 +243,4 @@ void *thread5(void *pt)
 
         video_task(&temp->thread_id, &temp->wcet);
     }
-
-    return NULL;
 }

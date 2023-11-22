@@ -1,9 +1,15 @@
-#include <sys/time.h>
-#include <time.h>
+/**
+ * @file periodic_settings.c
+ * @brief Ajustes de planificación de tareas periódicas
+ * @details Este archivo contiene las funciones para el manejo de los ajustes 
+ * de planificación de tareas periódicas.
+*/
+
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include <stdio.h>
-#include <string.h>
+#include <pthread.h>
+#include <sys/time.h>
 
 #include "periodic_settings.h"
 
