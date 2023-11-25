@@ -10,10 +10,10 @@
  * 5. VIDEO
  */
 
-void *sched_bus_task(int *id, int *wcet);
-void *data_task(int *id, int *wcet);
-void *control_task(int *id, int *wcet);
-void *radio_task(int *id, int *wcet);
-void *video_task(int *id, int *wcet);
+void *sched_bus_task(int *id, uint32_t *wcet, uint32_t *elapsed_time);
+void *data_task(int *id, uint32_t *wcet, uint32_t *elapsed_time);
+void *control_task(int *id, uint32_t *wcet, uint32_t *elapsed_time);
+void *radio_task(int *id, uint32_t *wcet, uint32_t *elapsed_time);
+void *video_task(int *id, uint32_t *wcet, uint32_t *elapsed_time);
 
 #endif

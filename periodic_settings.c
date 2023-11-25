@@ -15,6 +15,8 @@
 
 #define NSEC_PER_SEC 1000000000ULL
 
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
 void current_time()
 {
     time_t sec;
@@ -64,4 +66,20 @@ void start_periodic_timer(struct periodic_thread *perthread)
 
     clock_gettime(CLOCK_REALTIME, &perthread->r);      // Get current time
     timespec_add_us(&perthread->r, perthread->offset); // Add offset
+}
+
+void log_message(const char *message, int *thread_id)
+{
+    pthread_mutex_lock(&mutex);
+
+    char filename[20];
+    sprintf(filename, "log_file.log");
+    FILE *fp = fopen(filename, "a");
+    if (fp != NULL)
+    {
+        fprintf(fp, "%s\n", message);
+        fclose(fp);
+    }
+
+    pthread_mutex_unlock(&mutex);
 }

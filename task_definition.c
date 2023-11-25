@@ -2,7 +2,7 @@
  * @file task_definition.c
  * @brief Definición de tareas
  * @details Este archivo contiene las funciones para la definición de tareas.
-*/
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -14,27 +14,27 @@
 
 #define MAX_TASKS 10
 
-void *sched_bus_task(int *id, int *wcet)
+void *sched_bus_task(int *id, uint32_t *wcet, uint32_t *elapsed_time)
 {
-    usleep(*wcet);
+    usleep(*wcet - *elapsed_time);
 }
 
-void *data_task(int *id, int *wcet)
+void *data_task(int *id, uint32_t *wcet, uint32_t *elapsed_time)
 {
-    usleep(*wcet);
+    usleep(*wcet - *elapsed_time);
 }
 
-void *control_task(int *id, int *wcet)
+void *control_task(int *id, uint32_t *wcet, uint32_t *elapsed_time)
 {
-    usleep(*wcet);
+    usleep(*wcet - *elapsed_time);
 }
 
-void *radio_task(int *id, int *wcet)
+void *radio_task(int *id, uint32_t *wcet, uint32_t *elapsed_time)
 {
-    usleep(*wcet);
+    usleep(*wcet - *elapsed_time);
 }
 
-void *video_task(int *id, int *wcet)
+void *video_task(int *id, uint32_t *wcet, uint32_t *elapsed_time)
 {
-    usleep(*wcet);
+    usleep(*wcet - *elapsed_time);
 }

@@ -7,7 +7,7 @@ struct periodic_thread
 	int thread_id;
 	int period;
 	int offset;
-	int wcet;
+	uint32_t wcet;
 };
 
 void current_time();
@@ -19,5 +19,7 @@ int timespec_cmp(struct timespec *a, struct timespec *b);
 void start_periodic_timer(struct periodic_thread *perthread);
 
 void wait_next_activation(struct periodic_thread *t);
+
+void log_message(const char *message, int *thread_id);
 
 #endif

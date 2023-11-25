@@ -2,15 +2,16 @@
  * @file mars_pahtfinder_sched.c
  * @brief Ejemplo de planificación de tareas con prioridades fijas
  * @details Este programa es un ejemplo de planificación de tareas con prioridades fijas.
- * Se crean 5 hilos (threads) con prioridades fijas y se les asignan tareas con periodos y 
- * tiempos de ejecución fijos. Se utiliza la política de planificación FIFO (First In First Out) 
+ * Se crean 5 hilos (threads) con prioridades fijas y se les asignan tareas con periodos y
+ * tiempos de ejecución fijos. Se utiliza la política de planificación FIFO (First In First Out)
  * para la asignación de los hilos a los procesadores.
-*/
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <pthread.h>
+#include <sys/time.h>
 
 #include "periodic_settings.h"
 #include "task_definition.h"
@@ -44,7 +45,7 @@ int main(int argc, char *argv[])
     pthread_attr_init(&my_attr);
 
     // Setear prioridades de los hilos (threads)
-    int rc = pthread_attr_setschedpolicy(&my_attr, SCHED_FIFO);
+    int rc = pthread_attr_setschedpolicy(&my_attr, SCHED_RR);
     if (rc != 0)
     {
         perror("Error al setear la política de planificación");
@@ -102,35 +103,8 @@ int main(int argc, char *argv[])
 
 void *thread1(void *pt)
 {
-    struct periodic_thread *temp = (struct periodic_thread *)pt;
-
-    temp->period = 25000;   // 25 ms
-    temp->offset = 0;       // 100 ms
-    temp->wcet = 5000;      // 5 ms
-
-    struct timespec next, now;
-
-    clock_gettime(CLOCK_REALTIME, &next);
-    while (1)
-    {
-        clock_gettime(CLOCK_REALTIME, &now);
-        timespec_add_us(&next, temp->period);
-
-        if (timespec_cmp(&now, &next) > 0)
-        {
-            fprintf(stderr, "Deadline missed for theread %d\n", temp->thread_id);
-            fprintf(stderr, "now: %ld sec %ld nsec      next: %ld sec %ld nsec\n", now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
-            exit(-1);
-        }
-
-        clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
-
-        sched_bus_task(&temp->thread_id, &temp->wcet);
-    }
-}
-
-void *thread2(void *pt)
-{
+    char message[256];
+    struct timeval start, end;
     struct periodic_thread *temp = (struct periodic_thread *)pt;
 
     temp->period = 25000;
@@ -138,28 +112,73 @@ void *thread2(void *pt)
     temp->wcet = 5000;
 
     struct timespec next, now;
-
     clock_gettime(CLOCK_REALTIME, &next);
     while (1)
     {
+        gettimeofday(&start, NULL);
         clock_gettime(CLOCK_REALTIME, &now);
         timespec_add_us(&next, temp->period);
 
         if (timespec_cmp(&now, &next) > 0)
         {
-            fprintf(stderr, "Deadline missed for theread %d\n", temp->thread_id);
-            fprintf(stderr, "now: %ld sec %ld nsec      next: %ld sec %ld nsec\n", now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
-            exit(-1);
+            snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            log_message(message, &temp->thread_id);
+        }
+        else
+        {
+            snprintf(message, sizeof(message), "Deadline met    for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            log_message(message, &temp->thread_id);
         }
 
-        clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
+        gettimeofday(&end, NULL);
+        uint32_t elapsed = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_usec - start.tv_usec);
 
-        data_task(&temp->thread_id, &temp->wcet);
+        sched_bus_task(&temp->thread_id, &temp->wcet, &elapsed);
+        clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
+    }
+}
+
+void *thread2(void *pt)
+{
+    char message[256];
+    struct timeval start, end;
+    struct periodic_thread *temp = (struct periodic_thread *)pt;
+
+    temp->period = 25000;
+    temp->offset = 0;
+    temp->wcet = 5000;
+
+    struct timespec next, now;
+    clock_gettime(CLOCK_REALTIME, &next);
+    while (1)
+    {
+        gettimeofday(&start, NULL);
+        clock_gettime(CLOCK_REALTIME, &now);
+        timespec_add_us(&next, temp->period);
+
+        if (timespec_cmp(&now, &next) > 0)
+        {
+            snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            log_message(message, &temp->thread_id);
+        }
+        else
+        {
+            snprintf(message, sizeof(message), "Deadline met    for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            log_message(message, &temp->thread_id);
+        }
+
+        gettimeofday(&end, NULL);
+        uint32_t elapsed = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_usec - start.tv_usec);
+
+        data_task(&temp->thread_id, &temp->wcet, &elapsed);
+        clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
     }
 }
 
 void *thread3(void *pt)
 {
+    char message[256];
+    struct timeval start, end;
     struct periodic_thread *temp = (struct periodic_thread *)pt;
 
     temp->period = 50000;
@@ -167,28 +186,36 @@ void *thread3(void *pt)
     temp->wcet = 5000;
 
     struct timespec next, now;
-
     clock_gettime(CLOCK_REALTIME, &next);
     while (1)
     {
+        gettimeofday(&start, NULL);
         clock_gettime(CLOCK_REALTIME, &now);
         timespec_add_us(&next, temp->period);
 
         if (timespec_cmp(&now, &next) > 0)
         {
-            fprintf(stderr, "Deadline missed for theread %d\n", temp->thread_id);
-            fprintf(stderr, "now: %ld sec %ld nsec      next: %ld sec %ld nsec\n", now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
-            exit(-1);
+            snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            log_message(message, &temp->thread_id);
+        }
+        else
+        {
+            snprintf(message, sizeof(message), "Deadline met    for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            log_message(message, &temp->thread_id);
         }
 
-        clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
+        gettimeofday(&end, NULL);
+        uint32_t elapsed = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_usec - start.tv_usec);
 
-        control_task(&temp->thread_id, &temp->wcet);
+        control_task(&temp->thread_id, &temp->wcet, &elapsed);
+        clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
     }
 }
 
 void *thread4(void *pt)
 {
+    char message[256];
+    struct timeval start, end;
     struct periodic_thread *temp = (struct periodic_thread *)pt;
 
     temp->period = 50000;
@@ -196,28 +223,36 @@ void *thread4(void *pt)
     temp->wcet = 5000;
 
     struct timespec next, now;
-
     clock_gettime(CLOCK_REALTIME, &next);
     while (1)
     {
+        gettimeofday(&start, NULL);
         clock_gettime(CLOCK_REALTIME, &now);
         timespec_add_us(&next, temp->period);
 
         if (timespec_cmp(&now, &next) > 0)
         {
-            fprintf(stderr, "Deadline missed for theread %d\n", temp->thread_id);
-            fprintf(stderr, "now: %ld sec %ld nsec      next: %ld sec %ld nsec\n", now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
-            exit(-1);
+            snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            log_message(message, &temp->thread_id);
+        }
+        else
+        {
+            snprintf(message, sizeof(message), "Deadline met    for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            log_message(message, &temp->thread_id);
         }
 
-        clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
+        gettimeofday(&end, NULL);
+        uint32_t elapsed = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_usec - start.tv_usec);
 
-        radio_task(&temp->thread_id, &temp->wcet);
+        radio_task(&temp->thread_id, &temp->wcet, &elapsed);
+        clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
     }
 }
 
 void *thread5(void *pt)
 {
+    char message[256];
+    struct timeval start, end;
     struct periodic_thread *temp = (struct periodic_thread *)pt;
 
     temp->period = 50000;
@@ -225,22 +260,28 @@ void *thread5(void *pt)
     temp->wcet = 5000;
 
     struct timespec next, now;
-
     clock_gettime(CLOCK_REALTIME, &next);
     while (1)
     {
+        gettimeofday(&start, NULL);
         clock_gettime(CLOCK_REALTIME, &now);
         timespec_add_us(&next, temp->period);
 
         if (timespec_cmp(&now, &next) > 0)
         {
-            fprintf(stderr, "Deadline missed for theread %d\n", temp->thread_id);
-            fprintf(stderr, "now: %ld sec %ld nsec      next: %ld sec %ld nsec\n", now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
-            exit(-1);
+            snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            log_message(message, &temp->thread_id);
+        }
+        else
+        {
+            snprintf(message, sizeof(message), "Deadline met    for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            log_message(message, &temp->thread_id);
         }
 
-        clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
+        gettimeofday(&end, NULL);
+        uint32_t elapsed = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_usec - start.tv_usec);
 
-        video_task(&temp->thread_id, &temp->wcet);
+        video_task(&temp->thread_id, &temp->wcet, &elapsed);
+        clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
     }
 }
