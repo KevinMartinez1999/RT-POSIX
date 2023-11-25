@@ -31,6 +31,10 @@ int main(int argc, char *argv[])
     pthread_t tareas[NUM_TAREAS];
     pthread_attr_t my_attr;
 
+    // Inicializar recurso compartido con malloc
+    struct SharedResource info_bus;
+    init_shared_resource(&info_bus);
+
     struct sched_param sched_bus_priority, data_priority;
     struct sched_param control_priority, radio_priority, video_priority;
 
@@ -52,15 +56,17 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    struct periodic_thread *sched_bus = malloc(sizeof(struct periodic_thread));
-    struct periodic_thread *data = malloc(sizeof(struct periodic_thread));
-    struct periodic_thread *control = malloc(sizeof(struct periodic_thread));
-    struct periodic_thread *radio = malloc(sizeof(struct periodic_thread));
-    struct periodic_thread *video = malloc(sizeof(struct periodic_thread));
+    struct PeriodicThread *sched_bus = malloc(sizeof(struct PeriodicThread));
+    struct PeriodicThread *data = malloc(sizeof(struct PeriodicThread));
+    struct PeriodicThread *control = malloc(sizeof(struct PeriodicThread));
+    struct PeriodicThread *radio = malloc(sizeof(struct PeriodicThread));
+    struct PeriodicThread *video = malloc(sizeof(struct PeriodicThread));
 
     sched_bus->thread_id = 1;
     data->thread_id = 2;
+    data->shared_resource = &info_bus;
     control->thread_id = 3;
+    control->shared_resource = &info_bus;
     radio->thread_id = 4;
     video->thread_id = 5;
 
@@ -105,7 +111,7 @@ void *thread1(void *pt)
 {
     char message[256];
     struct timeval start, end;
-    struct periodic_thread *temp = (struct periodic_thread *)pt;
+    struct PeriodicThread *temp = (struct PeriodicThread *)pt;
 
     temp->period = 25000;
     temp->offset = 0;
@@ -122,12 +128,12 @@ void *thread1(void *pt)
         if (timespec_cmp(&now, &next) > 0)
         {
             snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
-            log_message(message, &temp->thread_id);
+            log_message(message, "log_file.log");
         }
         else
         {
-            snprintf(message, sizeof(message), "Deadline met    for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
-            log_message(message, &temp->thread_id);
+            snprintf(message, sizeof(message), "Deadline met for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            log_message(message, "log_file.log");
         }
 
         gettimeofday(&end, NULL);
@@ -142,7 +148,7 @@ void *thread2(void *pt)
 {
     char message[256];
     struct timeval start, end;
-    struct periodic_thread *temp = (struct periodic_thread *)pt;
+    struct PeriodicThread *temp = (struct PeriodicThread *)pt;
 
     temp->period = 25000;
     temp->offset = 0;
@@ -156,15 +162,29 @@ void *thread2(void *pt)
         clock_gettime(CLOCK_REALTIME, &now);
         timespec_add_us(&next, temp->period);
 
+        // Acceder al recurso compartido
+        snprintf(message, sizeof(message), "Accessing shared resource from thread %d: now %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+        log_message(message, "log_file.log");
+
+        pthread_mutex_lock(&temp->shared_resource->mutex);
+        temp->shared_resource->resource++;
+        pthread_mutex_unlock(&temp->shared_resource->mutex);
+
+        snprintf(message, sizeof(message), "Resource value: %d", temp->shared_resource->resource);
+        log_message(message, "log_file_resource.log");
+
+        snprintf(message, sizeof(message), "Leaving shared resource from thread %d: now %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+        log_message(message, "log_file.log");
+
         if (timespec_cmp(&now, &next) > 0)
         {
             snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
-            log_message(message, &temp->thread_id);
+            log_message(message, "log_file.log");
         }
         else
         {
-            snprintf(message, sizeof(message), "Deadline met    for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
-            log_message(message, &temp->thread_id);
+            snprintf(message, sizeof(message), "Deadline met for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            log_message(message, "log_file.log");
         }
 
         gettimeofday(&end, NULL);
@@ -179,7 +199,7 @@ void *thread3(void *pt)
 {
     char message[256];
     struct timeval start, end;
-    struct periodic_thread *temp = (struct periodic_thread *)pt;
+    struct PeriodicThread *temp = (struct PeriodicThread *)pt;
 
     temp->period = 50000;
     temp->offset = 0;
@@ -193,15 +213,29 @@ void *thread3(void *pt)
         clock_gettime(CLOCK_REALTIME, &now);
         timespec_add_us(&next, temp->period);
 
+        // Acceder al recurso compartido
+        snprintf(message, sizeof(message), "Accessing shared resource from thread %d: now %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+        log_message(message, "log_file.log");
+
+        pthread_mutex_lock(&temp->shared_resource->mutex);
+        temp->shared_resource->resource++;
+        pthread_mutex_unlock(&temp->shared_resource->mutex);
+
+        snprintf(message, sizeof(message), "Resource value: %d", temp->shared_resource->resource);
+        log_message(message, "log_file_resource.log");
+
+        snprintf(message, sizeof(message), "Leaving shared resource from thread %d: now %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+        log_message(message, "log_file.log");
+
         if (timespec_cmp(&now, &next) > 0)
         {
             snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
-            log_message(message, &temp->thread_id);
+            log_message(message, "log_file.log");
         }
         else
         {
-            snprintf(message, sizeof(message), "Deadline met    for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
-            log_message(message, &temp->thread_id);
+            snprintf(message, sizeof(message), "Deadline met for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            log_message(message, "log_file.log");
         }
 
         gettimeofday(&end, NULL);
@@ -216,7 +250,7 @@ void *thread4(void *pt)
 {
     char message[256];
     struct timeval start, end;
-    struct periodic_thread *temp = (struct periodic_thread *)pt;
+    struct PeriodicThread *temp = (struct PeriodicThread *)pt;
 
     temp->period = 50000;
     temp->offset = 0;
@@ -233,12 +267,12 @@ void *thread4(void *pt)
         if (timespec_cmp(&now, &next) > 0)
         {
             snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
-            log_message(message, &temp->thread_id);
+            log_message(message, "log_file.log");
         }
         else
         {
-            snprintf(message, sizeof(message), "Deadline met    for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
-            log_message(message, &temp->thread_id);
+            snprintf(message, sizeof(message), "Deadline met for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            log_message(message, "log_file.log");
         }
 
         gettimeofday(&end, NULL);
@@ -253,7 +287,7 @@ void *thread5(void *pt)
 {
     char message[256];
     struct timeval start, end;
-    struct periodic_thread *temp = (struct periodic_thread *)pt;
+    struct PeriodicThread *temp = (struct PeriodicThread *)pt;
 
     temp->period = 50000;
     temp->offset = 0;
@@ -270,12 +304,12 @@ void *thread5(void *pt)
         if (timespec_cmp(&now, &next) > 0)
         {
             snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
-            log_message(message, &temp->thread_id);
+            log_message(message, "log_file.log");
         }
         else
         {
-            snprintf(message, sizeof(message), "Deadline met    for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
-            log_message(message, &temp->thread_id);
+            snprintf(message, sizeof(message), "Deadline met for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            log_message(message, "log_file.log");
         }
 
         gettimeofday(&end, NULL);

@@ -1,9 +1,9 @@
 /**
  * @file periodic_settings.c
  * @brief Ajustes de planificación de tareas periódicas
- * @details Este archivo contiene las funciones para el manejo de los ajustes 
+ * @details Este archivo contiene las funciones para el manejo de los ajustes
  * de planificación de tareas periódicas.
-*/
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -42,23 +42,28 @@ void timespec_add_us(struct timespec *t, uint64_t us)
 
 int timespec_cmp(struct timespec *a, struct timespec *b)
 {
-    if (a->tv_sec > b->tv_sec) return 1;
-    else if (a->tv_sec < b->tv_sec) return -1;
+    if (a->tv_sec > b->tv_sec)
+        return 1;
+    else if (a->tv_sec < b->tv_sec)
+        return -1;
     else if (a->tv_sec == b->tv_sec)
     {
-        if (a->tv_nsec > b->tv_nsec) return 1;
-        else if (a->tv_nsec == b->tv_nsec) return 0;
-        else return -1;
+        if (a->tv_nsec > b->tv_nsec)
+            return 1;
+        else if (a->tv_nsec == b->tv_nsec)
+            return 0;
+        else
+            return -1;
     }
 }
 
-void wait_next_activation(struct periodic_thread *t)
+void wait_next_activation(struct PeriodicThread *t)
 {
     clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &t->r, NULL);
     timespec_add_us(&t->r, t->period);
 }
 
-void start_periodic_timer(struct periodic_thread *perthread)
+void start_periodic_timer(struct PeriodicThread *perthread)
 {
     // printf("Este hilo tiene un periodo de %d us\n", perthread->period);
     printf("El Hilo %d se ejecutara cada %d us\n", perthread->thread_id, perthread->period);
@@ -68,12 +73,10 @@ void start_periodic_timer(struct periodic_thread *perthread)
     timespec_add_us(&perthread->r, perthread->offset); // Add offset
 }
 
-void log_message(const char *message, int *thread_id)
+void log_message(const char *message, const char *filename)
 {
     pthread_mutex_lock(&mutex);
 
-    char filename[20];
-    sprintf(filename, "log_file.log");
     FILE *fp = fopen(filename, "a");
     if (fp != NULL)
     {
@@ -82,4 +85,10 @@ void log_message(const char *message, int *thread_id)
     }
 
     pthread_mutex_unlock(&mutex);
+}
+
+void init_shared_resource(struct SharedResource *shared_resource)
+{
+    shared_resource->resource = 0;
+    pthread_mutex_init(&shared_resource->mutex, NULL);
 }
