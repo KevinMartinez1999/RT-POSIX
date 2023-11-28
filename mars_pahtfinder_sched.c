@@ -47,8 +47,10 @@ int main(int argc, char *argv[])
     // Inicializar atributos de planeación de los hilos (threads)
     pthread_attr_init(&my_attr);
     pthread_mutexattr_init(&mymutexattr);
-    pthread_mutexattr_setprotocol(&mymutexattr, PTHREAD_PRIO_INHERIT);
+    pthread_mutexattr_setprotocol(&mymutexattr, PTHREAD_PRIO_PROTECT);
+    pthread_mutexattr_setprioceiling(&mymutexattr, 89);
     pthread_mutex_init(&mymutex1, &mymutexattr);
+    pthread_mutexattr_setprioceiling(&mymutexattr, 88);
     pthread_mutex_init(&mymutex2, &mymutexattr);
 
     // Setear prioridades de los hilos (threads)
@@ -166,7 +168,9 @@ void *thread2(void *pt)
 
         // Hacer uso del recurso compartido
         pthread_mutex_lock(&mymutex1);
-        usleep(2000);
+        for (int i = 0; i < 100000; i++)
+        {
+        }
         resource++;
         snprintf(message, sizeof(message), "Resource value: %d", resource);
         log_message(message, "log_resource.log");
@@ -219,7 +223,9 @@ void *thread3(void *pt)
 
         // Hacer uso del recurso compartido
         pthread_mutex_lock(&mymutex2);
-        usleep(2000);
+        for (int i = 0; i < 100000; i++)
+        {
+        }
         resource++;
         snprintf(message, sizeof(message), "Resource value: %d", resource);
         log_message(message, "log_resource.log");
