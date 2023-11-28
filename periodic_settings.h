@@ -1,12 +1,6 @@
 #ifndef PERIODIC_SETTINGS_H
 #define PERIODIC_SETTINGS_H
 
-struct SharedResource
-{
-	uint32_t resource;
-	pthread_mutex_t mutex;
-};
-
 struct PeriodicThread
 {
 	struct timespec r;
@@ -14,7 +8,6 @@ struct PeriodicThread
 	int period;
 	int offset;
 	uint32_t wcet;
-	struct SharedResource *shared_resource;
 };
 
 void current_time();
@@ -28,7 +21,5 @@ void start_periodic_timer(struct PeriodicThread *perthread);
 void wait_next_activation(struct PeriodicThread *t);
 
 void log_message(const char *message, const char *filename);
-
-void init_shared_resource(struct SharedResource *shared_resource);
 
 #endif

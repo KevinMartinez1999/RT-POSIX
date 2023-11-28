@@ -86,9 +86,3 @@ void log_message(const char *message, const char *filename)
 
     pthread_mutex_unlock(&mutex);
 }
-
-void init_shared_resource(struct SharedResource *shared_resource)
-{
-    shared_resource->resource = 0;
-    pthread_mutex_init(&shared_resource->mutex, NULL);
-}

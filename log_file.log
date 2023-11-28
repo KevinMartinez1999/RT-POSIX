@@ -1,412 +1,204 @@
-Deadline met for theread 1: now: 1700919108 sec 578504227 nsec    next: 1700919108 sec 603504027 nsec
-Accessing shared resource from thread 2: now 1700919108 sec 578515227 nsec    next: 1700919108 sec 603515127 nsec
-Leaving shared resource from thread 2: now 1700919108 sec 578515227 nsec    next: 1700919108 sec 603515127 nsec
-Deadline met for theread 2: now: 1700919108 sec 578515227 nsec    next: 1700919108 sec 603515127 nsec
-Accessing shared resource from thread 3: now 1700919108 sec 579542227 nsec    next: 1700919108 sec 629542027 nsec
-Leaving shared resource from thread 3: now 1700919108 sec 579542227 nsec    next: 1700919108 sec 629542027 nsec
-Deadline met for theread 3: now: 1700919108 sec 579542227 nsec    next: 1700919108 sec 629542027 nsec
-Deadline met for theread 4: now: 1700919108 sec 579566527 nsec    next: 1700919108 sec 629566427 nsec
-Deadline met for theread 5: now: 1700919108 sec 579582427 nsec    next: 1700919108 sec 629582227 nsec
-Deadline met for theread 1: now: 1700919108 sec 603576533 nsec    next: 1700919108 sec 628504027 nsec
-Accessing shared resource from thread 2: now 1700919108 sec 603576533 nsec    next: 1700919108 sec 628515127 nsec
-Leaving shared resource from thread 2: now 1700919108 sec 603576533 nsec    next: 1700919108 sec 628515127 nsec
-Deadline met for theread 2: now: 1700919108 sec 603576533 nsec    next: 1700919108 sec 628515127 nsec
-Accessing shared resource from thread 2: now 1700919108 sec 628767739 nsec    next: 1700919108 sec 653515127 nsec
-Leaving shared resource from thread 2: now 1700919108 sec 628767739 nsec    next: 1700919108 sec 653515127 nsec
-Deadline met for theread 1: now: 1700919108 sec 628767739 nsec    next: 1700919108 sec 653504027 nsec
-Deadline met for theread 2: now: 1700919108 sec 628767739 nsec    next: 1700919108 sec 653515127 nsec
-Accessing shared resource from thread 3: now 1700919108 sec 629589239 nsec    next: 1700919108 sec 679542027 nsec
-Leaving shared resource from thread 3: now 1700919108 sec 629589239 nsec    next: 1700919108 sec 679542027 nsec
-Deadline met for theread 3: now: 1700919108 sec 629589239 nsec    next: 1700919108 sec 679542027 nsec
-Deadline met for theread 4: now: 1700919108 sec 629603839 nsec    next: 1700919108 sec 679566427 nsec
-Deadline met for theread 5: now: 1700919108 sec 629653939 nsec    next: 1700919108 sec 679582227 nsec
-Deadline met for theread 1: now: 1700919108 sec 653748845 nsec    next: 1700919108 sec 678504027 nsec
-Accessing shared resource from thread 2: now 1700919108 sec 653770945 nsec    next: 1700919108 sec 678515127 nsec
-Leaving shared resource from thread 2: now 1700919108 sec 653770945 nsec    next: 1700919108 sec 678515127 nsec
-Deadline met for theread 2: now: 1700919108 sec 653770945 nsec    next: 1700919108 sec 678515127 nsec
-Accessing shared resource from thread 2: now 1700919108 sec 678766752 nsec    next: 1700919108 sec 703515127 nsec
-Leaving shared resource from thread 2: now 1700919108 sec 678766752 nsec    next: 1700919108 sec 703515127 nsec
-Deadline met for theread 2: now: 1700919108 sec 678766752 nsec    next: 1700919108 sec 703515127 nsec
-Deadline met for theread 1: now: 1700919108 sec 678774852 nsec    next: 1700919108 sec 703504027 nsec
-Accessing shared resource from thread 3: now 1700919108 sec 679803052 nsec    next: 1700919108 sec 729542027 nsec
-Leaving shared resource from thread 3: now 1700919108 sec 679803052 nsec    next: 1700919108 sec 729542027 nsec
-Deadline met for theread 3: now: 1700919108 sec 679803052 nsec    next: 1700919108 sec 729542027 nsec
-Deadline met for theread 4: now: 1700919108 sec 679828852 nsec    next: 1700919108 sec 729566427 nsec
-Deadline met for theread 5: now: 1700919108 sec 679803052 nsec    next: 1700919108 sec 729582227 nsec
-Deadline met for theread 1: now: 1700919108 sec 703626658 nsec    next: 1700919108 sec 728504027 nsec
-Accessing shared resource from thread 2: now 1700919108 sec 703646958 nsec    next: 1700919108 sec 728515127 nsec
-Leaving shared resource from thread 2: now 1700919108 sec 703646958 nsec    next: 1700919108 sec 728515127 nsec
-Deadline met for theread 2: now: 1700919108 sec 703646958 nsec    next: 1700919108 sec 728515127 nsec
-Deadline met for theread 1: now: 1700919108 sec 728728164 nsec    next: 1700919108 sec 753504027 nsec
-Accessing shared resource from thread 2: now 1700919108 sec 728740264 nsec    next: 1700919108 sec 753515127 nsec
-Leaving shared resource from thread 2: now 1700919108 sec 728740264 nsec    next: 1700919108 sec 753515127 nsec
-Deadline met for theread 2: now: 1700919108 sec 728740264 nsec    next: 1700919108 sec 753515127 nsec
-Deadline met for theread 5: now: 1700919108 sec 729647864 nsec    next: 1700919108 sec 779582227 nsec
-Accessing shared resource from thread 3: now 1700919108 sec 729647964 nsec    next: 1700919108 sec 779542027 nsec
-Leaving shared resource from thread 3: now 1700919108 sec 729647964 nsec    next: 1700919108 sec 779542027 nsec
-Deadline met for theread 3: now: 1700919108 sec 729647964 nsec    next: 1700919108 sec 779542027 nsec
-Deadline met for theread 4: now: 1700919108 sec 729671964 nsec    next: 1700919108 sec 779566427 nsec
-Deadline met for theread 1: now: 1700919108 sec 753593070 nsec    next: 1700919108 sec 778504027 nsec
-Accessing shared resource from thread 2: now 1700919108 sec 753618070 nsec    next: 1700919108 sec 778515127 nsec
-Leaving shared resource from thread 2: now 1700919108 sec 753618070 nsec    next: 1700919108 sec 778515127 nsec
-Deadline met for theread 2: now: 1700919108 sec 753618070 nsec    next: 1700919108 sec 778515127 nsec
-Deadline met for theread 1: now: 1700919108 sec 778802577 nsec    next: 1700919108 sec 803504027 nsec
-Accessing shared resource from thread 2: now 1700919108 sec 778802677 nsec    next: 1700919108 sec 803515127 nsec
-Leaving shared resource from thread 2: now 1700919108 sec 778802677 nsec    next: 1700919108 sec 803515127 nsec
-Deadline met for theread 2: now: 1700919108 sec 778802677 nsec    next: 1700919108 sec 803515127 nsec
-Deadline met for theread 5: now: 1700919108 sec 779628477 nsec    next: 1700919108 sec 829582227 nsec
-Accessing shared resource from thread 3: now 1700919108 sec 779716077 nsec    next: 1700919108 sec 829542027 nsec
-Leaving shared resource from thread 3: now 1700919108 sec 779716077 nsec    next: 1700919108 sec 829542027 nsec
-Deadline met for theread 3: now: 1700919108 sec 779716077 nsec    next: 1700919108 sec 829542027 nsec
-Deadline met for theread 4: now: 1700919108 sec 779722577 nsec    next: 1700919108 sec 829566427 nsec
-Deadline met for theread 1: now: 1700919108 sec 803686383 nsec    next: 1700919108 sec 828504027 nsec
-Accessing shared resource from thread 2: now 1700919108 sec 803697283 nsec    next: 1700919108 sec 828515127 nsec
-Leaving shared resource from thread 2: now 1700919108 sec 803697283 nsec    next: 1700919108 sec 828515127 nsec
-Deadline met for theread 2: now: 1700919108 sec 803697283 nsec    next: 1700919108 sec 828515127 nsec
-Deadline met for theread 1: now: 1700919108 sec 828702589 nsec    next: 1700919108 sec 853504027 nsec
-Accessing shared resource from thread 2: now 1700919108 sec 828702689 nsec    next: 1700919108 sec 853515127 nsec
-Leaving shared resource from thread 2: now 1700919108 sec 828702689 nsec    next: 1700919108 sec 853515127 nsec
-Deadline met for theread 2: now: 1700919108 sec 828702689 nsec    next: 1700919108 sec 853515127 nsec
-Accessing shared resource from thread 3: now 1700919108 sec 829675589 nsec    next: 1700919108 sec 879542027 nsec
-Leaving shared resource from thread 3: now 1700919108 sec 829675589 nsec    next: 1700919108 sec 879542027 nsec
-Deadline met for theread 3: now: 1700919108 sec 829675589 nsec    next: 1700919108 sec 879542027 nsec
-Deadline met for theread 4: now: 1700919108 sec 829693389 nsec    next: 1700919108 sec 879566427 nsec
-Deadline met for theread 5: now: 1700919108 sec 829699389 nsec    next: 1700919108 sec 879582227 nsec
-Deadline met for theread 1: now: 1700919108 sec 853669596 nsec    next: 1700919108 sec 878504027 nsec
-Accessing shared resource from thread 2: now 1700919108 sec 853696296 nsec    next: 1700919108 sec 878515127 nsec
-Leaving shared resource from thread 2: now 1700919108 sec 853696296 nsec    next: 1700919108 sec 878515127 nsec
-Deadline met for theread 2: now: 1700919108 sec 853696296 nsec    next: 1700919108 sec 878515127 nsec
-Deadline met for theread 1: now: 1700919108 sec 878810202 nsec    next: 1700919108 sec 903504027 nsec
-Accessing shared resource from thread 2: now 1700919108 sec 878810202 nsec    next: 1700919108 sec 903515127 nsec
-Leaving shared resource from thread 2: now 1700919108 sec 878810202 nsec    next: 1700919108 sec 903515127 nsec
-Deadline met for theread 2: now: 1700919108 sec 878810202 nsec    next: 1700919108 sec 903515127 nsec
-Deadline met for theread 5: now: 1700919108 sec 879624102 nsec    next: 1700919108 sec 929582227 nsec
-Accessing shared resource from thread 3: now 1700919108 sec 879697402 nsec    next: 1700919108 sec 929542027 nsec
-Leaving shared resource from thread 3: now 1700919108 sec 879697402 nsec    next: 1700919108 sec 929542027 nsec
-Deadline met for theread 3: now: 1700919108 sec 879697402 nsec    next: 1700919108 sec 929542027 nsec
-Deadline met for theread 4: now: 1700919108 sec 879709202 nsec    next: 1700919108 sec 929566427 nsec
-Deadline met for theread 1: now: 1700919108 sec 903705208 nsec    next: 1700919108 sec 928504027 nsec
-Accessing shared resource from thread 2: now 1700919108 sec 903829808 nsec    next: 1700919108 sec 928515127 nsec
-Leaving shared resource from thread 2: now 1700919108 sec 903829808 nsec    next: 1700919108 sec 928515127 nsec
-Deadline met for theread 2: now: 1700919108 sec 903829808 nsec    next: 1700919108 sec 928515127 nsec
-Accessing shared resource from thread 2: now 1700919108 sec 928578714 nsec    next: 1700919108 sec 953515127 nsec
-Leaving shared resource from thread 2: now 1700919108 sec 928578714 nsec    next: 1700919108 sec 953515127 nsec
-Deadline met for theread 2: now: 1700919108 sec 928578714 nsec    next: 1700919108 sec 953515127 nsec
-Deadline met for theread 1: now: 1700919108 sec 928642114 nsec    next: 1700919108 sec 953504027 nsec
-Deadline met for theread 5: now: 1700919108 sec 929634515 nsec    next: 1700919108 sec 979582227 nsec
-Accessing shared resource from thread 3: now 1700919108 sec 929682115 nsec    next: 1700919108 sec 979542027 nsec
-Leaving shared resource from thread 3: now 1700919108 sec 929682115 nsec    next: 1700919108 sec 979542027 nsec
-Deadline met for theread 3: now: 1700919108 sec 929682115 nsec    next: 1700919108 sec 979542027 nsec
-Deadline met for theread 4: now: 1700919108 sec 929721915 nsec    next: 1700919108 sec 979566427 nsec
-Accessing shared resource from thread 2: now 1700919108 sec 953571621 nsec    next: 1700919108 sec 978515127 nsec
-Deadline met for theread 1: now: 1700919108 sec 953658321 nsec    next: 1700919108 sec 978504027 nsec
-Leaving shared resource from thread 2: now 1700919108 sec 953571621 nsec    next: 1700919108 sec 978515127 nsec
-Deadline met for theread 2: now: 1700919108 sec 953571621 nsec    next: 1700919108 sec 978515127 nsec
-Deadline met for theread 1: now: 1700919108 sec 978647527 nsec    next: 1700919109 sec 3504027 nsec
-Accessing shared resource from thread 2: now 1700919108 sec 978647527 nsec    next: 1700919109 sec 3515127 nsec
-Leaving shared resource from thread 2: now 1700919108 sec 978647527 nsec    next: 1700919109 sec 3515127 nsec
-Deadline met for theread 2: now: 1700919108 sec 978647527 nsec    next: 1700919109 sec 3515127 nsec
-Accessing shared resource from thread 3: now 1700919108 sec 979666327 nsec    next: 1700919109 sec 29542027 nsec
-Leaving shared resource from thread 3: now 1700919108 sec 979666327 nsec    next: 1700919109 sec 29542027 nsec
-Deadline met for theread 3: now: 1700919108 sec 979666327 nsec    next: 1700919109 sec 29542027 nsec
-Deadline met for theread 4: now: 1700919108 sec 979670627 nsec    next: 1700919109 sec 29566427 nsec
-Deadline met for theread 5: now: 1700919108 sec 979692627 nsec    next: 1700919109 sec 29582227 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 3795333 nsec    next: 1700919109 sec 28515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 3795333 nsec    next: 1700919109 sec 28515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 3795333 nsec    next: 1700919109 sec 28515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 3795333 nsec    next: 1700919109 sec 28504027 nsec
-Deadline met for theread 1: now: 1700919109 sec 28757140 nsec    next: 1700919109 sec 53504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 28772940 nsec    next: 1700919109 sec 53515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 28772940 nsec    next: 1700919109 sec 53515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 28772940 nsec    next: 1700919109 sec 53515127 nsec
-Deadline met for theread 5: now: 1700919109 sec 29622740 nsec    next: 1700919109 sec 79582227 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 29642840 nsec    next: 1700919109 sec 79542027 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 29642840 nsec    next: 1700919109 sec 79542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 29642840 nsec    next: 1700919109 sec 79542027 nsec
-Deadline met for theread 4: now: 1700919109 sec 29622040 nsec    next: 1700919109 sec 79566427 nsec
-Deadline met for theread 1: now: 1700919109 sec 53844646 nsec    next: 1700919109 sec 78504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 53878346 nsec    next: 1700919109 sec 78515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 53878346 nsec    next: 1700919109 sec 78515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 53878346 nsec    next: 1700919109 sec 78515127 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 78622752 nsec    next: 1700919109 sec 103515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 78622752 nsec    next: 1700919109 sec 103515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 78622752 nsec    next: 1700919109 sec 103515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 78725252 nsec    next: 1700919109 sec 103504027 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 79636652 nsec    next: 1700919109 sec 129542027 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 79636652 nsec    next: 1700919109 sec 129542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 79636652 nsec    next: 1700919109 sec 129542027 nsec
-Deadline met for theread 4: now: 1700919109 sec 79642252 nsec    next: 1700919109 sec 129566427 nsec
-Deadline met for theread 5: now: 1700919109 sec 79653652 nsec    next: 1700919109 sec 129582227 nsec
-Deadline met for theread 1: now: 1700919109 sec 103826558 nsec    next: 1700919109 sec 128504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 103826658 nsec    next: 1700919109 sec 128515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 103826658 nsec    next: 1700919109 sec 128515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 103826658 nsec    next: 1700919109 sec 128515127 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 128748365 nsec    next: 1700919109 sec 153515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 128748365 nsec    next: 1700919109 sec 153515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 128748365 nsec    next: 1700919109 sec 153515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 128774165 nsec    next: 1700919109 sec 153504027 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 129661065 nsec    next: 1700919109 sec 179542027 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 129661065 nsec    next: 1700919109 sec 179542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 129661065 nsec    next: 1700919109 sec 179542027 nsec
-Deadline met for theread 4: now: 1700919109 sec 129692965 nsec    next: 1700919109 sec 179566427 nsec
-Deadline met for theread 5: now: 1700919109 sec 129701165 nsec    next: 1700919109 sec 179582227 nsec
-Deadline met for theread 1: now: 1700919109 sec 153739671 nsec    next: 1700919109 sec 178504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 153739771 nsec    next: 1700919109 sec 178515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 153739771 nsec    next: 1700919109 sec 178515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 153739771 nsec    next: 1700919109 sec 178515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 178602477 nsec    next: 1700919109 sec 203504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 179174077 nsec    next: 1700919109 sec 203515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 179174077 nsec    next: 1700919109 sec 203515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 179174077 nsec    next: 1700919109 sec 203515127 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 179618677 nsec    next: 1700919109 sec 229542027 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 179618677 nsec    next: 1700919109 sec 229542027 nsec
-Deadline met for theread 5: now: 1700919109 sec 179819977 nsec    next: 1700919109 sec 229582227 nsec
-Deadline met for theread 4: now: 1700919109 sec 179630577 nsec    next: 1700919109 sec 229566427 nsec
-Deadline met for theread 3: now: 1700919109 sec 179618677 nsec    next: 1700919109 sec 229542027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 203676783 nsec    next: 1700919109 sec 228515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 203676783 nsec    next: 1700919109 sec 228515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 203676783 nsec    next: 1700919109 sec 228515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 203676783 nsec    next: 1700919109 sec 228504027 nsec
-Deadline met for theread 1: now: 1700919109 sec 228594490 nsec    next: 1700919109 sec 253504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 228602690 nsec    next: 1700919109 sec 253515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 228602690 nsec    next: 1700919109 sec 253515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 228602690 nsec    next: 1700919109 sec 253515127 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 229598590 nsec    next: 1700919109 sec 279542027 nsec
-Deadline met for theread 4: now: 1700919109 sec 229659890 nsec    next: 1700919109 sec 279566427 nsec
-Deadline met for theread 5: now: 1700919109 sec 229698790 nsec    next: 1700919109 sec 279582227 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 229598590 nsec    next: 1700919109 sec 279542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 229598590 nsec    next: 1700919109 sec 279542027 nsec
-Deadline met for theread 1: now: 1700919109 sec 253550396 nsec    next: 1700919109 sec 278504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 253560796 nsec    next: 1700919109 sec 278515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 253560796 nsec    next: 1700919109 sec 278515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 253560796 nsec    next: 1700919109 sec 278515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 278566102 nsec    next: 1700919109 sec 303504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 278587402 nsec    next: 1700919109 sec 303515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 278587402 nsec    next: 1700919109 sec 303515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 278587402 nsec    next: 1700919109 sec 303515127 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 279708503 nsec    next: 1700919109 sec 329542027 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 279708503 nsec    next: 1700919109 sec 329542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 279708503 nsec    next: 1700919109 sec 329542027 nsec
-Deadline met for theread 4: now: 1700919109 sec 279712503 nsec    next: 1700919109 sec 329566427 nsec
-Deadline met for theread 5: now: 1700919109 sec 279724703 nsec    next: 1700919109 sec 329582227 nsec
-Deadline met for theread 1: now: 1700919109 sec 303648409 nsec    next: 1700919109 sec 328504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 303717809 nsec    next: 1700919109 sec 328515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 303717809 nsec    next: 1700919109 sec 328515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 303717809 nsec    next: 1700919109 sec 328515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 328670515 nsec    next: 1700919109 sec 353504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 328779715 nsec    next: 1700919109 sec 353515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 328779715 nsec    next: 1700919109 sec 353515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 328779715 nsec    next: 1700919109 sec 353515127 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 329659915 nsec    next: 1700919109 sec 379542027 nsec
-Deadline met for theread 4: now: 1700919109 sec 329751415 nsec    next: 1700919109 sec 379566427 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 329659915 nsec    next: 1700919109 sec 379542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 329659915 nsec    next: 1700919109 sec 379542027 nsec
-Deadline met for theread 5: now: 1700919109 sec 329708615 nsec    next: 1700919109 sec 379582227 nsec
-Deadline met for theread 1: now: 1700919109 sec 353897321 nsec    next: 1700919109 sec 378504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 353897421 nsec    next: 1700919109 sec 378515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 353897421 nsec    next: 1700919109 sec 378515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 353897421 nsec    next: 1700919109 sec 378515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 378806627 nsec    next: 1700919109 sec 403504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 378806627 nsec    next: 1700919109 sec 403515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 378806627 nsec    next: 1700919109 sec 403515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 378806627 nsec    next: 1700919109 sec 403515127 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 379689328 nsec    next: 1700919109 sec 429542027 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 379689328 nsec    next: 1700919109 sec 429542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 379689328 nsec    next: 1700919109 sec 429542027 nsec
-Deadline met for theread 4: now: 1700919109 sec 379718928 nsec    next: 1700919109 sec 429566427 nsec
-Deadline met for theread 5: now: 1700919109 sec 379806628 nsec    next: 1700919109 sec 429582227 nsec
-Deadline met for theread 1: now: 1700919109 sec 403842634 nsec    next: 1700919109 sec 428504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 403842534 nsec    next: 1700919109 sec 428515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 403842534 nsec    next: 1700919109 sec 428515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 403842534 nsec    next: 1700919109 sec 428515127 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 428653540 nsec    next: 1700919109 sec 453515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 428653540 nsec    next: 1700919109 sec 453515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 428653540 nsec    next: 1700919109 sec 453515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 428653440 nsec    next: 1700919109 sec 453504027 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 429589640 nsec    next: 1700919109 sec 479542027 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 429589640 nsec    next: 1700919109 sec 479542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 429589640 nsec    next: 1700919109 sec 479542027 nsec
-Deadline met for theread 4: now: 1700919109 sec 429718240 nsec    next: 1700919109 sec 479566427 nsec
-Deadline met for theread 5: now: 1700919109 sec 429670940 nsec    next: 1700919109 sec 479582227 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 453590046 nsec    next: 1700919109 sec 478515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 453590046 nsec    next: 1700919109 sec 478515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 453590046 nsec    next: 1700919109 sec 478515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 453590146 nsec    next: 1700919109 sec 478504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 478769353 nsec    next: 1700919109 sec 503515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 478769353 nsec    next: 1700919109 sec 503515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 478769353 nsec    next: 1700919109 sec 503515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 478787853 nsec    next: 1700919109 sec 503504027 nsec
-Deadline met for theread 5: now: 1700919109 sec 479775153 nsec    next: 1700919109 sec 529582227 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 479799153 nsec    next: 1700919109 sec 529542027 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 479799153 nsec    next: 1700919109 sec 529542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 479799153 nsec    next: 1700919109 sec 529542027 nsec
-Deadline met for theread 4: now: 1700919109 sec 479775153 nsec    next: 1700919109 sec 529566427 nsec
-Deadline met for theread 1: now: 1700919109 sec 503576959 nsec    next: 1700919109 sec 528504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 503626159 nsec    next: 1700919109 sec 528515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 503626159 nsec    next: 1700919109 sec 528515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 503626159 nsec    next: 1700919109 sec 528515127 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 528593465 nsec    next: 1700919109 sec 553515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 528593465 nsec    next: 1700919109 sec 553515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 528593465 nsec    next: 1700919109 sec 553515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 528590965 nsec    next: 1700919109 sec 553504027 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 529611965 nsec    next: 1700919109 sec 579542027 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 529611965 nsec    next: 1700919109 sec 579542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 529611965 nsec    next: 1700919109 sec 579542027 nsec
-Deadline met for theread 4: now: 1700919109 sec 529617365 nsec    next: 1700919109 sec 579566427 nsec
-Deadline met for theread 5: now: 1700919109 sec 529654565 nsec    next: 1700919109 sec 579582227 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 553844171 nsec    next: 1700919109 sec 578515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 553844171 nsec    next: 1700919109 sec 578515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 553844171 nsec    next: 1700919109 sec 578515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 553868471 nsec    next: 1700919109 sec 578504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 578578878 nsec    next: 1700919109 sec 603515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 578578878 nsec    next: 1700919109 sec 603515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 578578878 nsec    next: 1700919109 sec 603515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 578653478 nsec    next: 1700919109 sec 603504027 nsec
-Deadline met for theread 4: now: 1700919109 sec 579755478 nsec    next: 1700919109 sec 629566427 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 579780678 nsec    next: 1700919109 sec 629542027 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 579780678 nsec    next: 1700919109 sec 629542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 579780678 nsec    next: 1700919109 sec 629542027 nsec
-Deadline met for theread 5: now: 1700919109 sec 579786878 nsec    next: 1700919109 sec 629582227 nsec
-Deadline met for theread 1: now: 1700919109 sec 603695684 nsec    next: 1700919109 sec 628504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 603695684 nsec    next: 1700919109 sec 628515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 603695684 nsec    next: 1700919109 sec 628515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 603695684 nsec    next: 1700919109 sec 628515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 628785890 nsec    next: 1700919109 sec 653504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 628898390 nsec    next: 1700919109 sec 653515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 628898390 nsec    next: 1700919109 sec 653515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 628898390 nsec    next: 1700919109 sec 653515127 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 629693991 nsec    next: 1700919109 sec 679542027 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 629693991 nsec    next: 1700919109 sec 679542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 629693991 nsec    next: 1700919109 sec 679542027 nsec
-Deadline met for theread 4: now: 1700919109 sec 629715791 nsec    next: 1700919109 sec 679566427 nsec
-Deadline met for theread 5: now: 1700919109 sec 629706291 nsec    next: 1700919109 sec 679582227 nsec
-Deadline met for theread 1: now: 1700919109 sec 653861897 nsec    next: 1700919109 sec 678504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 653861997 nsec    next: 1700919109 sec 678515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 653861997 nsec    next: 1700919109 sec 678515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 653861997 nsec    next: 1700919109 sec 678515127 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 678800903 nsec    next: 1700919109 sec 703515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 678800903 nsec    next: 1700919109 sec 703515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 678800903 nsec    next: 1700919109 sec 703515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 678914803 nsec    next: 1700919109 sec 703504027 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 679783003 nsec    next: 1700919109 sec 729542027 nsec
-Deadline met for theread 5: now: 1700919109 sec 679645303 nsec    next: 1700919109 sec 729582227 nsec
-Deadline met for theread 4: now: 1700919109 sec 679800403 nsec    next: 1700919109 sec 729566427 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 679783003 nsec    next: 1700919109 sec 729542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 679783003 nsec    next: 1700919109 sec 729542027 nsec
-Deadline met for theread 1: now: 1700919109 sec 703793209 nsec    next: 1700919109 sec 728504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 703793309 nsec    next: 1700919109 sec 728515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 703793309 nsec    next: 1700919109 sec 728515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 703793309 nsec    next: 1700919109 sec 728515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 728665415 nsec    next: 1700919109 sec 753504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 728665315 nsec    next: 1700919109 sec 753515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 728665315 nsec    next: 1700919109 sec 753515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 728665315 nsec    next: 1700919109 sec 753515127 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 729611316 nsec    next: 1700919109 sec 779542027 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 729611316 nsec    next: 1700919109 sec 779542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 729611316 nsec    next: 1700919109 sec 779542027 nsec
-Deadline met for theread 4: now: 1700919109 sec 729669916 nsec    next: 1700919109 sec 779566427 nsec
-Deadline met for theread 5: now: 1700919109 sec 729709716 nsec    next: 1700919109 sec 779582227 nsec
-Deadline met for theread 1: now: 1700919109 sec 753637322 nsec    next: 1700919109 sec 778504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 753637422 nsec    next: 1700919109 sec 778515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 753637422 nsec    next: 1700919109 sec 778515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 753637422 nsec    next: 1700919109 sec 778515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 778642328 nsec    next: 1700919109 sec 803504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 778649728 nsec    next: 1700919109 sec 803515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 778649728 nsec    next: 1700919109 sec 803515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 778649728 nsec    next: 1700919109 sec 803515127 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 779684128 nsec    next: 1700919109 sec 829542027 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 779684128 nsec    next: 1700919109 sec 829542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 779684128 nsec    next: 1700919109 sec 829542027 nsec
-Deadline met for theread 4: now: 1700919109 sec 779693228 nsec    next: 1700919109 sec 829566427 nsec
-Deadline met for theread 5: now: 1700919109 sec 779758828 nsec    next: 1700919109 sec 829582227 nsec
-Deadline met for theread 1: now: 1700919109 sec 803733734 nsec    next: 1700919109 sec 828504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 803765334 nsec    next: 1700919109 sec 828515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 803765334 nsec    next: 1700919109 sec 828515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 803765334 nsec    next: 1700919109 sec 828515127 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 828653641 nsec    next: 1700919109 sec 853515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 828653641 nsec    next: 1700919109 sec 853515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 828653641 nsec    next: 1700919109 sec 853515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 828727641 nsec    next: 1700919109 sec 853504027 nsec
-Deadline met for theread 4: now: 1700919109 sec 829625941 nsec    next: 1700919109 sec 879566427 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 829625941 nsec    next: 1700919109 sec 879542027 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 829625941 nsec    next: 1700919109 sec 879542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 829625941 nsec    next: 1700919109 sec 879542027 nsec
-Deadline met for theread 5: now: 1700919109 sec 829684541 nsec    next: 1700919109 sec 879582227 nsec
-Deadline met for theread 1: now: 1700919109 sec 853599647 nsec    next: 1700919109 sec 878504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 853609547 nsec    next: 1700919109 sec 878515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 853609547 nsec    next: 1700919109 sec 878515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 853609547 nsec    next: 1700919109 sec 878515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 878625753 nsec    next: 1700919109 sec 903504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 878647853 nsec    next: 1700919109 sec 903515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 878647853 nsec    next: 1700919109 sec 903515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 878647853 nsec    next: 1700919109 sec 903515127 nsec
-Deadline met for theread 5: now: 1700919109 sec 879721853 nsec    next: 1700919109 sec 929582227 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 879728053 nsec    next: 1700919109 sec 929542027 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 879728053 nsec    next: 1700919109 sec 929542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 879728053 nsec    next: 1700919109 sec 929542027 nsec
-Deadline met for theread 4: now: 1700919109 sec 879721853 nsec    next: 1700919109 sec 929566427 nsec
-Deadline met for theread 1: now: 1700919109 sec 903744559 nsec    next: 1700919109 sec 928504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 903774759 nsec    next: 1700919109 sec 928515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 903774759 nsec    next: 1700919109 sec 928515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 903774759 nsec    next: 1700919109 sec 928515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 928581466 nsec    next: 1700919109 sec 953504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 928581466 nsec    next: 1700919109 sec 953515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 928581466 nsec    next: 1700919109 sec 953515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 928581466 nsec    next: 1700919109 sec 953515127 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 929610166 nsec    next: 1700919109 sec 979542027 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 929610166 nsec    next: 1700919109 sec 979542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 929610166 nsec    next: 1700919109 sec 979542027 nsec
-Deadline met for theread 4: now: 1700919109 sec 929647866 nsec    next: 1700919109 sec 979566427 nsec
-Deadline met for theread 5: now: 1700919109 sec 929641566 nsec    next: 1700919109 sec 979582227 nsec
-Deadline met for theread 1: now: 1700919109 sec 953802372 nsec    next: 1700919109 sec 978504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 953826872 nsec    next: 1700919109 sec 978515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 953826872 nsec    next: 1700919109 sec 978515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 953826872 nsec    next: 1700919109 sec 978515127 nsec
-Deadline met for theread 1: now: 1700919109 sec 978574478 nsec    next: 1700919110 sec 3504027 nsec
-Accessing shared resource from thread 2: now 1700919109 sec 978610078 nsec    next: 1700919110 sec 3515127 nsec
-Leaving shared resource from thread 2: now 1700919109 sec 978610078 nsec    next: 1700919110 sec 3515127 nsec
-Deadline met for theread 2: now: 1700919109 sec 978610078 nsec    next: 1700919110 sec 3515127 nsec
-Deadline met for theread 4: now: 1700919109 sec 979624578 nsec    next: 1700919110 sec 29566427 nsec
-Accessing shared resource from thread 3: now 1700919109 sec 979651779 nsec    next: 1700919110 sec 29542027 nsec
-Leaving shared resource from thread 3: now 1700919109 sec 979651779 nsec    next: 1700919110 sec 29542027 nsec
-Deadline met for theread 3: now: 1700919109 sec 979651779 nsec    next: 1700919110 sec 29542027 nsec
-Deadline met for theread 5: now: 1700919109 sec 979644479 nsec    next: 1700919110 sec 29582227 nsec
-Deadline met for theread 1: now: 1700919110 sec 3757085 nsec    next: 1700919110 sec 28504027 nsec
-Accessing shared resource from thread 2: now 1700919110 sec 3778685 nsec    next: 1700919110 sec 28515127 nsec
-Leaving shared resource from thread 2: now 1700919110 sec 3778685 nsec    next: 1700919110 sec 28515127 nsec
-Deadline met for theread 2: now: 1700919110 sec 3778685 nsec    next: 1700919110 sec 28515127 nsec
-Deadline met for theread 1: now: 1700919110 sec 28732991 nsec    next: 1700919110 sec 53504027 nsec
-Accessing shared resource from thread 2: now 1700919110 sec 28739991 nsec    next: 1700919110 sec 53515127 nsec
-Leaving shared resource from thread 2: now 1700919110 sec 28739991 nsec    next: 1700919110 sec 53515127 nsec
-Deadline met for theread 2: now: 1700919110 sec 28739991 nsec    next: 1700919110 sec 53515127 nsec
-Deadline met for theread 4: now: 1700919110 sec 29659891 nsec    next: 1700919110 sec 79566427 nsec
-Accessing shared resource from thread 3: now 1700919110 sec 29659891 nsec    next: 1700919110 sec 79542027 nsec
-Leaving shared resource from thread 3: now 1700919110 sec 29659891 nsec    next: 1700919110 sec 79542027 nsec
-Deadline met for theread 3: now: 1700919110 sec 29659891 nsec    next: 1700919110 sec 79542027 nsec
-Deadline met for theread 5: now: 1700919110 sec 29713691 nsec    next: 1700919110 sec 79582227 nsec
-Deadline met for theread 1: now: 1700919110 sec 53603097 nsec    next: 1700919110 sec 78504027 nsec
-Accessing shared resource from thread 2: now 1700919110 sec 53630797 nsec    next: 1700919110 sec 78515127 nsec
-Leaving shared resource from thread 2: now 1700919110 sec 53630797 nsec    next: 1700919110 sec 78515127 nsec
-Deadline met for theread 2: now: 1700919110 sec 53630797 nsec    next: 1700919110 sec 78515127 nsec
-Deadline met for theread 1: now: 1700919110 sec 78622403 nsec    next: 1700919110 sec 103504027 nsec
-Accessing shared resource from thread 2: now 1700919110 sec 78674003 nsec    next: 1700919110 sec 103515127 nsec
-Leaving shared resource from thread 2: now 1700919110 sec 78674003 nsec    next: 1700919110 sec 103515127 nsec
-Deadline met for theread 2: now: 1700919110 sec 78674003 nsec    next: 1700919110 sec 103515127 nsec
-Deadline met for theread 4: now: 1700919110 sec 79780304 nsec    next: 1700919110 sec 129566427 nsec
-Accessing shared resource from thread 3: now 1700919110 sec 79811004 nsec    next: 1700919110 sec 129542027 nsec
-Leaving shared resource from thread 3: now 1700919110 sec 79811004 nsec    next: 1700919110 sec 129542027 nsec
-Deadline met for theread 3: now: 1700919110 sec 79811004 nsec    next: 1700919110 sec 129542027 nsec
-Deadline met for theread 5: now: 1700919110 sec 79817504 nsec    next: 1700919110 sec 129582227 nsec
-Accessing shared resource from thread 2: now 1700919110 sec 103749710 nsec    next: 1700919110 sec 128515127 nsec
-Leaving shared resource from thread 2: now 1700919110 sec 103749710 nsec    next: 1700919110 sec 128515127 nsec
-Deadline met for theread 2: now: 1700919110 sec 103749710 nsec    next: 1700919110 sec 128515127 nsec
-Deadline met for theread 1: now: 1700919110 sec 103771310 nsec    next: 1700919110 sec 128504027 nsec
-Accessing shared resource from thread 2: now 1700919110 sec 128736416 nsec    next: 1700919110 sec 153515127 nsec
-Leaving shared resource from thread 2: now 1700919110 sec 128736416 nsec    next: 1700919110 sec 153515127 nsec
-Deadline met for theread 2: now: 1700919110 sec 128736416 nsec    next: 1700919110 sec 153515127 nsec
-Deadline met for theread 1: now: 1700919110 sec 128742916 nsec    next: 1700919110 sec 153504027 nsec
-Deadline met for theread 4: now: 1700919110 sec 129616516 nsec    next: 1700919110 sec 179566427 nsec
-Accessing shared resource from thread 3: now 1700919110 sec 129621716 nsec    next: 1700919110 sec 179542027 nsec
-Leaving shared resource from thread 3: now 1700919110 sec 129621716 nsec    next: 1700919110 sec 179542027 nsec
-Deadline met for theread 3: now: 1700919110 sec 129621716 nsec    next: 1700919110 sec 179542027 nsec
-Deadline met for theread 5: now: 1700919110 sec 129626916 nsec    next: 1700919110 sec 179582227 nsec
+Deadline met for theread 1: now: 1701139248 sec 79268877 nsec    next: 1701139248 sec 104268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 79311077 nsec    next: 1701139248 sec 104310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 80027777 nsec    next: 1701139248 sec 104310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 80058677 nsec    next: 1701139248 sec 104310977 nsec
+Accessing shared resource from thread 3: now 1701139248 sec 79358277 nsec    next: 1701139248 sec 129358177 nsec
+Leaving shared resource from thread 3: now 1701139248 sec 80203277 nsec    next: 1701139248 sec 129358177 nsec
+Deadline met for theread 3: now: 1701139248 sec 80221877 nsec    next: 1701139248 sec 129358177 nsec
+Deadline met for theread 4: now: 1701139248 sec 79356977 nsec    next: 1701139248 sec 129356777 nsec
+Deadline met for theread 5: now: 1701139248 sec 79926477 nsec    next: 1701139248 sec 129926377 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 104588679 nsec    next: 1701139248 sec 129310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 104721979 nsec    next: 1701139248 sec 129310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 104741679 nsec    next: 1701139248 sec 129310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 104588879 nsec    next: 1701139248 sec 129268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 129560580 nsec    next: 1701139248 sec 154310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 129691480 nsec    next: 1701139248 sec 154310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 129712880 nsec    next: 1701139248 sec 154310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 129594580 nsec    next: 1701139248 sec 154268677 nsec
+Accessing shared resource from thread 3: now 1701139248 sec 129635280 nsec    next: 1701139248 sec 179358177 nsec
+Leaving shared resource from thread 3: now 1701139248 sec 129955780 nsec    next: 1701139248 sec 179358177 nsec
+Deadline met for theread 4: now: 1701139248 sec 129560580 nsec    next: 1701139248 sec 179356777 nsec
+Deadline met for theread 3: now: 1701139248 sec 129977480 nsec    next: 1701139248 sec 179358177 nsec
+Deadline met for theread 5: now: 1701139248 sec 129940280 nsec    next: 1701139248 sec 179926377 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 154578482 nsec    next: 1701139248 sec 179310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 154840082 nsec    next: 1701139248 sec 179310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 154625482 nsec    next: 1701139248 sec 179268677 nsec
+Deadline met for theread 2: now: 1701139248 sec 154878582 nsec    next: 1701139248 sec 179310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 179329683 nsec    next: 1701139248 sec 204268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 179370583 nsec    next: 1701139248 sec 204310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 179747283 nsec    next: 1701139248 sec 204310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 179814483 nsec    next: 1701139248 sec 204310977 nsec
+Accessing shared resource from thread 3: now 1701139248 sec 179458583 nsec    next: 1701139248 sec 229358177 nsec
+Leaving shared resource from thread 3: now 1701139248 sec 179984583 nsec    next: 1701139248 sec 229358177 nsec
+Deadline met for theread 3: now: 1701139248 sec 180040683 nsec    next: 1701139248 sec 229358177 nsec
+Deadline met for theread 5: now: 1701139248 sec 180084583 nsec    next: 1701139248 sec 229926377 nsec
+Deadline met for theread 4: now: 1701139248 sec 179524783 nsec    next: 1701139248 sec 229356777 nsec
+Deadline met for theread 1: now: 1701139248 sec 204497184 nsec    next: 1701139248 sec 229268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 204528384 nsec    next: 1701139248 sec 229310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 204655284 nsec    next: 1701139248 sec 229310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 204665984 nsec    next: 1701139248 sec 229310977 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 229621586 nsec    next: 1701139248 sec 254310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 229738386 nsec    next: 1701139248 sec 254310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 229759486 nsec    next: 1701139248 sec 254310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 229662586 nsec    next: 1701139248 sec 254268677 nsec
+Accessing shared resource from thread 3: now 1701139248 sec 229621686 nsec    next: 1701139248 sec 279358177 nsec
+Leaving shared resource from thread 3: now 1701139248 sec 229989686 nsec    next: 1701139248 sec 279358177 nsec
+Deadline met for theread 3: now: 1701139248 sec 230014986 nsec    next: 1701139248 sec 279358177 nsec
+Deadline met for theread 4: now: 1701139248 sec 229621686 nsec    next: 1701139248 sec 279356777 nsec
+Deadline met for theread 5: now: 1701139248 sec 229959286 nsec    next: 1701139248 sec 279926377 nsec
+Deadline met for theread 1: now: 1701139248 sec 254656587 nsec    next: 1701139248 sec 279268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 254715387 nsec    next: 1701139248 sec 279310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 254983687 nsec    next: 1701139248 sec 279310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 255011687 nsec    next: 1701139248 sec 279310977 nsec
+Accessing shared resource from thread 3: now 1701139248 sec 279650788 nsec    next: 1701139248 sec 329358177 nsec
+Deadline met for theread 5: now: 1701139248 sec 280058688 nsec    next: 1701139248 sec 329926377 nsec
+Deadline met for theread 1: now: 1701139248 sec 279650988 nsec    next: 1701139248 sec 304268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 279650888 nsec    next: 1701139248 sec 304310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 280590188 nsec    next: 1701139248 sec 304310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 280692888 nsec    next: 1701139248 sec 304310977 nsec
+Leaving shared resource from thread 3: now 1701139248 sec 280062788 nsec    next: 1701139248 sec 329358177 nsec
+Deadline met for theread 3: now: 1701139248 sec 280959989 nsec    next: 1701139248 sec 329358177 nsec
+Deadline met for theread 4: now: 1701139248 sec 279650988 nsec    next: 1701139248 sec 329356777 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 304559990 nsec    next: 1701139248 sec 329310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 304831990 nsec    next: 1701139248 sec 329310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 304879990 nsec    next: 1701139248 sec 329310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 304559890 nsec    next: 1701139248 sec 329268677 nsec
+Deadline met for theread 4: now: 1701139248 sec 329396091 nsec    next: 1701139248 sec 379356777 nsec
+Deadline met for theread 1: now: 1701139248 sec 329418491 nsec    next: 1701139248 sec 354268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 329421491 nsec    next: 1701139248 sec 354310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 330402291 nsec    next: 1701139248 sec 354310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 330468291 nsec    next: 1701139248 sec 354310977 nsec
+Accessing shared resource from thread 3: now 1701139248 sec 329517291 nsec    next: 1701139248 sec 379358177 nsec
+Leaving shared resource from thread 3: now 1701139248 sec 330820391 nsec    next: 1701139248 sec 379358177 nsec
+Deadline met for theread 3: now: 1701139248 sec 330873891 nsec    next: 1701139248 sec 379358177 nsec
+Deadline met for theread 5: now: 1701139248 sec 330102491 nsec    next: 1701139248 sec 379926377 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 354562293 nsec    next: 1701139248 sec 379310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 354832293 nsec    next: 1701139248 sec 379310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 354879793 nsec    next: 1701139248 sec 379310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 354562193 nsec    next: 1701139248 sec 379268677 nsec
+Deadline met for theread 4: now: 1701139248 sec 379527094 nsec    next: 1701139248 sec 429356777 nsec
+Deadline met for theread 1: now: 1701139248 sec 379526894 nsec    next: 1701139248 sec 404268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 379526994 nsec    next: 1701139248 sec 404310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 380454494 nsec    next: 1701139248 sec 404310977 nsec
+Accessing shared resource from thread 3: now 1701139248 sec 379527094 nsec    next: 1701139248 sec 429358177 nsec
+Leaving shared resource from thread 3: now 1701139248 sec 380859894 nsec    next: 1701139248 sec 429358177 nsec
+Deadline met for theread 3: now: 1701139248 sec 380925394 nsec    next: 1701139248 sec 429358177 nsec
+Deadline met for theread 2: now: 1701139248 sec 380523794 nsec    next: 1701139248 sec 404310977 nsec
+Deadline met for theread 5: now: 1701139248 sec 380167894 nsec    next: 1701139248 sec 429926377 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 404549395 nsec    next: 1701139248 sec 429310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 404868595 nsec    next: 1701139248 sec 429310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 404917195 nsec    next: 1701139248 sec 429310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 404549295 nsec    next: 1701139248 sec 429268677 nsec
+Accessing shared resource from thread 3: now 1701139248 sec 429399697 nsec    next: 1701139248 sec 479358177 nsec
+Leaving shared resource from thread 3: now 1701139248 sec 429661697 nsec    next: 1701139248 sec 479358177 nsec
+Deadline met for theread 3: now: 1701139248 sec 429710297 nsec    next: 1701139248 sec 479358177 nsec
+Deadline met for theread 1: now: 1701139248 sec 429401697 nsec    next: 1701139248 sec 454268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 429449297 nsec    next: 1701139248 sec 454310977 nsec
+Deadline met for theread 5: now: 1701139248 sec 430056197 nsec    next: 1701139248 sec 479926377 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 430591997 nsec    next: 1701139248 sec 454310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 430651797 nsec    next: 1701139248 sec 454310977 nsec
+Deadline met for theread 4: now: 1701139248 sec 429490397 nsec    next: 1701139248 sec 479356777 nsec
+Deadline met for theread 1: now: 1701139248 sec 454299598 nsec    next: 1701139248 sec 479268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 454341198 nsec    next: 1701139248 sec 479310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 454484198 nsec    next: 1701139248 sec 479310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 454502398 nsec    next: 1701139248 sec 479310977 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 479419499 nsec    next: 1701139248 sec 504310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 479534599 nsec    next: 1701139248 sec 504310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 479546599 nsec    next: 1701139248 sec 504310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 479419499 nsec    next: 1701139248 sec 504268677 nsec
+Accessing shared resource from thread 3: now 1701139248 sec 479434399 nsec    next: 1701139248 sec 529358177 nsec
+Leaving shared resource from thread 3: now 1701139248 sec 479725300 nsec    next: 1701139248 sec 529358177 nsec
+Deadline met for theread 3: now: 1701139248 sec 479736700 nsec    next: 1701139248 sec 529358177 nsec
+Deadline met for theread 4: now: 1701139248 sec 479435199 nsec    next: 1701139248 sec 529356777 nsec
+Deadline met for theread 5: now: 1701139248 sec 480014800 nsec    next: 1701139248 sec 529926377 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 504485201 nsec    next: 1701139248 sec 529310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 504600701 nsec    next: 1701139248 sec 529310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 504504501 nsec    next: 1701139248 sec 529268677 nsec
+Deadline met for theread 2: now: 1701139248 sec 504621901 nsec    next: 1701139248 sec 529310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 529573002 nsec    next: 1701139248 sec 554268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 529573002 nsec    next: 1701139248 sec 554310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 529797702 nsec    next: 1701139248 sec 554310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 529817702 nsec    next: 1701139248 sec 554310977 nsec
+Accessing shared resource from thread 3: now 1701139248 sec 529573002 nsec    next: 1701139248 sec 579358177 nsec
+Leaving shared resource from thread 3: now 1701139248 sec 529915502 nsec    next: 1701139248 sec 579358177 nsec
+Deadline met for theread 3: now: 1701139248 sec 529930102 nsec    next: 1701139248 sec 579358177 nsec
+Deadline met for theread 4: now: 1701139248 sec 529573002 nsec    next: 1701139248 sec 579356777 nsec
+Deadline met for theread 5: now: 1701139248 sec 529993502 nsec    next: 1701139248 sec 579926377 nsec
+Deadline met for theread 1: now: 1701139248 sec 554419804 nsec    next: 1701139248 sec 579268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 554449304 nsec    next: 1701139248 sec 579310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 554872504 nsec    next: 1701139248 sec 579310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 554903104 nsec    next: 1701139248 sec 579310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 579654705 nsec    next: 1701139248 sec 604268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 579654605 nsec    next: 1701139248 sec 604310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 580210705 nsec    next: 1701139248 sec 604310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 580260805 nsec    next: 1701139248 sec 604310977 nsec
+Accessing shared resource from thread 3: now 1701139248 sec 579656805 nsec    next: 1701139248 sec 629358177 nsec
+Leaving shared resource from thread 3: now 1701139248 sec 580548305 nsec    next: 1701139248 sec 629358177 nsec
+Deadline met for theread 3: now: 1701139248 sec 580671005 nsec    next: 1701139248 sec 629358177 nsec
+Deadline met for theread 4: now: 1701139248 sec 579715305 nsec    next: 1701139248 sec 629356777 nsec
+Deadline met for theread 5: now: 1701139248 sec 580010605 nsec    next: 1701139248 sec 629926377 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 604527506 nsec    next: 1701139248 sec 629310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 604738806 nsec    next: 1701139248 sec 629310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 604792906 nsec    next: 1701139248 sec 629310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 604527406 nsec    next: 1701139248 sec 629268677 nsec
+Deadline met for theread 1: now: 1701139248 sec 629657308 nsec    next: 1701139248 sec 654268677 nsec
+Deadline met for theread 5: now: 1701139248 sec 629957708 nsec    next: 1701139248 sec 679926377 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 629657508 nsec    next: 1701139248 sec 654310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 630407508 nsec    next: 1701139248 sec 654310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 630457108 nsec    next: 1701139248 sec 654310977 nsec
+Accessing shared resource from thread 3: now 1701139248 sec 629657508 nsec    next: 1701139248 sec 679358177 nsec
+Leaving shared resource from thread 3: now 1701139248 sec 630780508 nsec    next: 1701139248 sec 679358177 nsec
+Deadline met for theread 3: now: 1701139248 sec 630822008 nsec    next: 1701139248 sec 679358177 nsec
+Deadline met for theread 4: now: 1701139248 sec 629657708 nsec    next: 1701139248 sec 679356777 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 654580009 nsec    next: 1701139248 sec 679310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 654913509 nsec    next: 1701139248 sec 679310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 655041309 nsec    next: 1701139248 sec 679310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 654579909 nsec    next: 1701139248 sec 679268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 679375611 nsec    next: 1701139248 sec 704310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 679481111 nsec    next: 1701139248 sec 704310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 679572711 nsec    next: 1701139248 sec 704310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 679375511 nsec    next: 1701139248 sec 704268677 nsec
+Accessing shared resource from thread 3: now 1701139248 sec 679379611 nsec    next: 1701139248 sec 729358177 nsec
+Deadline met for theread 4: now: 1701139248 sec 679381011 nsec    next: 1701139248 sec 729356777 nsec
+Leaving shared resource from thread 3: now 1701139248 sec 679938211 nsec    next: 1701139248 sec 729358177 nsec
+Deadline met for theread 3: now: 1701139248 sec 679973911 nsec    next: 1701139248 sec 729358177 nsec
+Deadline met for theread 5: now: 1701139248 sec 679945011 nsec    next: 1701139248 sec 729926377 nsec
+Deadline met for theread 1: now: 1701139248 sec 704401012 nsec    next: 1701139248 sec 729268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 704419012 nsec    next: 1701139248 sec 729310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 704566612 nsec    next: 1701139248 sec 729310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 704575512 nsec    next: 1701139248 sec 729310977 nsec
+Deadline met for theread 4: now: 1701139248 sec 729451013 nsec    next: 1701139248 sec 779356777 nsec
+Deadline met for theread 1: now: 1701139248 sec 729451013 nsec    next: 1701139248 sec 754268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 729511213 nsec    next: 1701139248 sec 754310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 729772513 nsec    next: 1701139248 sec 754310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 729782813 nsec    next: 1701139248 sec 754310977 nsec
+Accessing shared resource from thread 3: now 1701139248 sec 729482713 nsec    next: 1701139248 sec 779358177 nsec
+Leaving shared resource from thread 3: now 1701139248 sec 729826013 nsec    next: 1701139248 sec 779358177 nsec
+Deadline met for theread 3: now: 1701139248 sec 729835213 nsec    next: 1701139248 sec 779358177 nsec
+Deadline met for theread 5: now: 1701139248 sec 729967913 nsec    next: 1701139248 sec 779926377 nsec
+Deadline met for theread 1: now: 1701139248 sec 754316015 nsec    next: 1701139248 sec 779268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 754385015 nsec    next: 1701139248 sec 779310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 754421915 nsec    next: 1701139248 sec 779310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 754430915 nsec    next: 1701139248 sec 779310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 779521716 nsec    next: 1701139248 sec 804268677 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 779521716 nsec    next: 1701139248 sec 804310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 779720516 nsec    next: 1701139248 sec 804310977 nsec
+Deadline met for theread 2: now: 1701139248 sec 779730516 nsec    next: 1701139248 sec 804310977 nsec
+Accessing shared resource from thread 3: now 1701139248 sec 779521716 nsec    next: 1701139248 sec 829358177 nsec
+Leaving shared resource from thread 3: now 1701139248 sec 779824216 nsec    next: 1701139248 sec 829358177 nsec
+Deadline met for theread 3: now: 1701139248 sec 779834616 nsec    next: 1701139248 sec 829358177 nsec
+Deadline met for theread 4: now: 1701139248 sec 779556616 nsec    next: 1701139248 sec 829356777 nsec
+Deadline met for theread 5: now: 1701139248 sec 780006116 nsec    next: 1701139248 sec 829926377 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 804535517 nsec    next: 1701139248 sec 829310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 804701317 nsec    next: 1701139248 sec 829310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 804566017 nsec    next: 1701139248 sec 829268677 nsec
+Deadline met for theread 2: now: 1701139248 sec 804719517 nsec    next: 1701139248 sec 829310977 nsec
+Accessing shared resource from thread 3: now 1701139248 sec 829659219 nsec    next: 1701139248 sec 879358177 nsec
+Leaving shared resource from thread 3: now 1701139248 sec 829986419 nsec    next: 1701139248 sec 879358177 nsec
+Deadline met for theread 3: now: 1701139248 sec 830027219 nsec    next: 1701139248 sec 879358177 nsec
+Deadline met for theread 5: now: 1701139248 sec 830054719 nsec    next: 1701139248 sec 879926377 nsec
+Accessing shared resource from thread 2: now 1701139248 sec 829659219 nsec    next: 1701139248 sec 854310977 nsec
+Leaving shared resource from thread 2: now 1701139248 sec 830346919 nsec    next: 1701139248 sec 854310977 nsec
+Deadline met for theread 1: now: 1701139248 sec 829659019 nsec    next: 1701139248 sec 854268677 nsec
+Deadline met for theread 2: now: 1701139248 sec 830411319 nsec    next: 1701139248 sec 854310977 nsec
+Deadline met for theread 4: now: 1701139248 sec 829659219 nsec    next: 1701139248 sec 879356777 nsec

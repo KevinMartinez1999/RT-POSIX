@@ -18,7 +18,10 @@
 
 #define NUM_TAREAS 5
 
-// static pthread_mutex_t lock;
+int resource = 0; // Recurso compartido
+
+pthread_mutexattr_t mymutexattr;
+pthread_mutex_t mymutex1, mymutex2;
 
 void *thread1(void *pt);
 void *thread2(void *pt);
@@ -30,10 +33,6 @@ int main(int argc, char *argv[])
 {
     pthread_t tareas[NUM_TAREAS];
     pthread_attr_t my_attr;
-
-    // Inicializar recurso compartido con malloc
-    struct SharedResource info_bus;
-    init_shared_resource(&info_bus);
 
     struct sched_param sched_bus_priority, data_priority;
     struct sched_param control_priority, radio_priority, video_priority;
@@ -47,6 +46,10 @@ int main(int argc, char *argv[])
 
     // Inicializar atributos de planeación de los hilos (threads)
     pthread_attr_init(&my_attr);
+    pthread_mutexattr_init(&mymutexattr);
+    pthread_mutexattr_setprotocol(&mymutexattr, PTHREAD_PRIO_INHERIT);
+    pthread_mutex_init(&mymutex1, &mymutexattr);
+    pthread_mutex_init(&mymutex2, &mymutexattr);
 
     // Setear prioridades de los hilos (threads)
     int rc = pthread_attr_setschedpolicy(&my_attr, SCHED_RR);
@@ -64,9 +67,7 @@ int main(int argc, char *argv[])
 
     sched_bus->thread_id = 1;
     data->thread_id = 2;
-    data->shared_resource = &info_bus;
     control->thread_id = 3;
-    control->shared_resource = &info_bus;
     radio->thread_id = 4;
     video->thread_id = 5;
 
@@ -99,7 +100,9 @@ int main(int argc, char *argv[])
         pthread_join(tareas[i], NULL);
     }
 
-    // pthread_mutex_destroy(&lock);
+    pthread_mutexattr_destroy(&mymutexattr);
+    pthread_mutex_destroy(&mymutex1);
+    pthread_mutex_destroy(&mymutex2);
     pthread_attr_destroy(&my_attr);
 
     pthread_exit(NULL);
@@ -166,16 +169,18 @@ void *thread2(void *pt)
         snprintf(message, sizeof(message), "Accessing shared resource from thread %d: now %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
         log_message(message, "log_file.log");
 
-        pthread_mutex_lock(&temp->shared_resource->mutex);
-        temp->shared_resource->resource++;
-        pthread_mutex_unlock(&temp->shared_resource->mutex);
-
-        snprintf(message, sizeof(message), "Resource value: %d", temp->shared_resource->resource);
+        // Logica del recurso compartido
+        pthread_mutex_lock(&mymutex1);
+        resource++;
+        snprintf(message, sizeof(message), "Resource value: %d", resource);
         log_message(message, "log_file_resource.log");
+        pthread_mutex_unlock(&mymutex1);
 
+        clock_gettime(CLOCK_REALTIME, &now);
         snprintf(message, sizeof(message), "Leaving shared resource from thread %d: now %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
         log_message(message, "log_file.log");
 
+        clock_gettime(CLOCK_REALTIME, &now);
         if (timespec_cmp(&now, &next) > 0)
         {
             snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
@@ -217,16 +222,18 @@ void *thread3(void *pt)
         snprintf(message, sizeof(message), "Accessing shared resource from thread %d: now %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
         log_message(message, "log_file.log");
 
-        pthread_mutex_lock(&temp->shared_resource->mutex);
-        temp->shared_resource->resource++;
-        pthread_mutex_unlock(&temp->shared_resource->mutex);
-
-        snprintf(message, sizeof(message), "Resource value: %d", temp->shared_resource->resource);
+        // Logica del recurso compartido
+        pthread_mutex_lock(&mymutex2);
+        resource++;
+        snprintf(message, sizeof(message), "Resource value: %d", resource);
         log_message(message, "log_file_resource.log");
+        pthread_mutex_unlock(&mymutex2);
 
+        clock_gettime(CLOCK_REALTIME, &now);
         snprintf(message, sizeof(message), "Leaving shared resource from thread %d: now %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
         log_message(message, "log_file.log");
 
+        clock_gettime(CLOCK_REALTIME, &now);
         if (timespec_cmp(&now, &next) > 0)
         {
             snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
