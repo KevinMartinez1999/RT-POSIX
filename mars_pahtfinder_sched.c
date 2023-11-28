@@ -113,36 +113,33 @@ int main(int argc, char *argv[])
 void *thread1(void *pt)
 {
     char message[256];
-    struct timeval start, end;
+    struct timespec next;
     struct PeriodicThread *temp = (struct PeriodicThread *)pt;
 
     temp->period = 25000;
-    temp->offset = 0;
     temp->wcet = 5000;
 
-    struct timespec next, now;
     clock_gettime(CLOCK_REALTIME, &next);
     while (1)
     {
-        gettimeofday(&start, NULL);
-        clock_gettime(CLOCK_REALTIME, &now);
+        // Calcular el siguiente tiempo de ejecución
         timespec_add_us(&next, temp->period);
+        sched_bus_task(temp->wcet);
+        clock_gettime(CLOCK_REALTIME, &temp->r);
 
-        if (timespec_cmp(&now, &next) > 0)
+        // Verificar si se cumplió el deadline
+        if (timespec_cmp(&temp->r, &next) > 0)
         {
-            snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, temp->r.tv_sec, temp->r.tv_nsec, next.tv_sec, next.tv_nsec);
             log_message(message, "log_file.log");
         }
         else
         {
-            snprintf(message, sizeof(message), "Deadline met for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            snprintf(message, sizeof(message), "Deadline met for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, temp->r.tv_sec, temp->r.tv_nsec, next.tv_sec, next.tv_nsec);
             log_message(message, "log_file.log");
         }
 
-        gettimeofday(&end, NULL);
-        uint32_t elapsed = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_usec - start.tv_usec);
-
-        sched_bus_task(&temp->thread_id, &temp->wcet, &elapsed);
+        // Duerme hasta el siguiente periodo
         clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
     }
 }
@@ -150,52 +147,52 @@ void *thread1(void *pt)
 void *thread2(void *pt)
 {
     char message[256];
-    struct timeval start, end;
+    struct timespec next;
     struct PeriodicThread *temp = (struct PeriodicThread *)pt;
 
     temp->period = 25000;
-    temp->offset = 0;
     temp->wcet = 5000;
 
-    struct timespec next, now;
     clock_gettime(CLOCK_REALTIME, &next);
     while (1)
     {
-        gettimeofday(&start, NULL);
-        clock_gettime(CLOCK_REALTIME, &now);
+        // Calcular el siguiente tiempo de ejecución
         timespec_add_us(&next, temp->period);
+        clock_gettime(CLOCK_REALTIME, &temp->r);
 
-        // Acceder al recurso compartido
-        snprintf(message, sizeof(message), "Accessing shared resource from thread %d: now %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+        // Guardar en log_file.log cuando se accede al recurso compartido
+        snprintf(message, sizeof(message), "Thread %d is accessing the resource: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, temp->r.tv_sec, temp->r.tv_nsec, next.tv_sec, next.tv_nsec);
         log_message(message, "log_file.log");
 
-        // Logica del recurso compartido
+        // Hacer uso del recurso compartido
         pthread_mutex_lock(&mymutex1);
+        usleep(2000);
         resource++;
         snprintf(message, sizeof(message), "Resource value: %d", resource);
-        log_message(message, "log_file_resource.log");
+        log_message(message, "log_resource.log");
         pthread_mutex_unlock(&mymutex1);
 
-        clock_gettime(CLOCK_REALTIME, &now);
-        snprintf(message, sizeof(message), "Leaving shared resource from thread %d: now %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+        clock_gettime(CLOCK_REALTIME, &temp->r);
+        // Guardar en log_file.log cuando se libera el recurso compartido
+        snprintf(message, sizeof(message), "Thread %d is releasing the resource: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, temp->r.tv_sec, temp->r.tv_nsec, next.tv_sec, next.tv_nsec);
         log_message(message, "log_file.log");
 
-        clock_gettime(CLOCK_REALTIME, &now);
-        if (timespec_cmp(&now, &next) > 0)
+        data_task(temp->wcet);
+        clock_gettime(CLOCK_REALTIME, &temp->r);
+
+        // Verificar si se cumplió el deadline
+        if (timespec_cmp(&temp->r, &next) > 0)
         {
-            snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, temp->r.tv_sec, temp->r.tv_nsec, next.tv_sec, next.tv_nsec);
             log_message(message, "log_file.log");
         }
         else
         {
-            snprintf(message, sizeof(message), "Deadline met for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            snprintf(message, sizeof(message), "Deadline met for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, temp->r.tv_sec, temp->r.tv_nsec, next.tv_sec, next.tv_nsec);
             log_message(message, "log_file.log");
         }
 
-        gettimeofday(&end, NULL);
-        uint32_t elapsed = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_usec - start.tv_usec);
-
-        data_task(&temp->thread_id, &temp->wcet, &elapsed);
+        // Duerme hasta el siguiente periodo
         clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
     }
 }
@@ -203,52 +200,52 @@ void *thread2(void *pt)
 void *thread3(void *pt)
 {
     char message[256];
-    struct timeval start, end;
+    struct timespec next;
     struct PeriodicThread *temp = (struct PeriodicThread *)pt;
 
     temp->period = 50000;
-    temp->offset = 0;
     temp->wcet = 5000;
 
-    struct timespec next, now;
     clock_gettime(CLOCK_REALTIME, &next);
     while (1)
     {
-        gettimeofday(&start, NULL);
-        clock_gettime(CLOCK_REALTIME, &now);
+        // Calcular el siguiente tiempo de ejecución
         timespec_add_us(&next, temp->period);
+        clock_gettime(CLOCK_REALTIME, &temp->r);
 
-        // Acceder al recurso compartido
-        snprintf(message, sizeof(message), "Accessing shared resource from thread %d: now %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+        // Guardar en log_file.log cuando se accede al recurso compartido
+        snprintf(message, sizeof(message), "Thread %d is accessing the resource: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, temp->r.tv_sec, temp->r.tv_nsec, next.tv_sec, next.tv_nsec);
         log_message(message, "log_file.log");
 
-        // Logica del recurso compartido
+        // Hacer uso del recurso compartido
         pthread_mutex_lock(&mymutex2);
+        usleep(2000);
         resource++;
         snprintf(message, sizeof(message), "Resource value: %d", resource);
-        log_message(message, "log_file_resource.log");
+        log_message(message, "log_resource.log");
         pthread_mutex_unlock(&mymutex2);
 
-        clock_gettime(CLOCK_REALTIME, &now);
-        snprintf(message, sizeof(message), "Leaving shared resource from thread %d: now %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+        clock_gettime(CLOCK_REALTIME, &temp->r);
+        // Guardar en log_file.log cuando se libera el recurso compartido
+        snprintf(message, sizeof(message), "Thread %d is releasing the resource: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, temp->r.tv_sec, temp->r.tv_nsec, next.tv_sec, next.tv_nsec);
         log_message(message, "log_file.log");
 
-        clock_gettime(CLOCK_REALTIME, &now);
-        if (timespec_cmp(&now, &next) > 0)
+        control_task(temp->wcet);
+        clock_gettime(CLOCK_REALTIME, &temp->r);
+
+        // Verificar si se cumplió el deadline
+        if (timespec_cmp(&temp->r, &next) > 0)
         {
-            snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, temp->r.tv_sec, temp->r.tv_nsec, next.tv_sec, next.tv_nsec);
             log_message(message, "log_file.log");
         }
         else
         {
-            snprintf(message, sizeof(message), "Deadline met for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            snprintf(message, sizeof(message), "Deadline met for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, temp->r.tv_sec, temp->r.tv_nsec, next.tv_sec, next.tv_nsec);
             log_message(message, "log_file.log");
         }
 
-        gettimeofday(&end, NULL);
-        uint32_t elapsed = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_usec - start.tv_usec);
-
-        control_task(&temp->thread_id, &temp->wcet, &elapsed);
+        // Duerme hasta el siguiente periodo
         clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
     }
 }
@@ -256,36 +253,33 @@ void *thread3(void *pt)
 void *thread4(void *pt)
 {
     char message[256];
-    struct timeval start, end;
+    struct timespec next;
     struct PeriodicThread *temp = (struct PeriodicThread *)pt;
 
     temp->period = 50000;
-    temp->offset = 0;
     temp->wcet = 5000;
 
-    struct timespec next, now;
     clock_gettime(CLOCK_REALTIME, &next);
     while (1)
     {
-        gettimeofday(&start, NULL);
-        clock_gettime(CLOCK_REALTIME, &now);
+        // Calcular el siguiente tiempo de ejecución
         timespec_add_us(&next, temp->period);
+        radio_task(temp->wcet);
+        clock_gettime(CLOCK_REALTIME, &temp->r);
 
-        if (timespec_cmp(&now, &next) > 0)
+        // Verificar si se cumplió el deadline
+        if (timespec_cmp(&temp->r, &next) > 0)
         {
-            snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, temp->r.tv_sec, temp->r.tv_nsec, next.tv_sec, next.tv_nsec);
             log_message(message, "log_file.log");
         }
         else
         {
-            snprintf(message, sizeof(message), "Deadline met for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            snprintf(message, sizeof(message), "Deadline met for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, temp->r.tv_sec, temp->r.tv_nsec, next.tv_sec, next.tv_nsec);
             log_message(message, "log_file.log");
         }
 
-        gettimeofday(&end, NULL);
-        uint32_t elapsed = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_usec - start.tv_usec);
-
-        radio_task(&temp->thread_id, &temp->wcet, &elapsed);
+        // Duerme hasta el siguiente periodo
         clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
     }
 }
@@ -293,36 +287,33 @@ void *thread4(void *pt)
 void *thread5(void *pt)
 {
     char message[256];
-    struct timeval start, end;
+    struct timespec next;
     struct PeriodicThread *temp = (struct PeriodicThread *)pt;
 
     temp->period = 50000;
-    temp->offset = 0;
     temp->wcet = 5000;
 
-    struct timespec next, now;
     clock_gettime(CLOCK_REALTIME, &next);
     while (1)
     {
-        gettimeofday(&start, NULL);
-        clock_gettime(CLOCK_REALTIME, &now);
+        // Calcular el siguiente tiempo de ejecución
         timespec_add_us(&next, temp->period);
+        video_task(temp->wcet);
+        clock_gettime(CLOCK_REALTIME, &temp->r);
 
-        if (timespec_cmp(&now, &next) > 0)
+        // Verificar si se cumplió el deadline
+        if (timespec_cmp(&temp->r, &next) > 0)
         {
-            snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            snprintf(message, sizeof(message), "Deadline missed for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, temp->r.tv_sec, temp->r.tv_nsec, next.tv_sec, next.tv_nsec);
             log_message(message, "log_file.log");
         }
         else
         {
-            snprintf(message, sizeof(message), "Deadline met for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, now.tv_sec, now.tv_nsec, next.tv_sec, next.tv_nsec);
+            snprintf(message, sizeof(message), "Deadline met for theread %d: now: %ld sec %ld nsec    next: %ld sec %ld nsec", temp->thread_id, temp->r.tv_sec, temp->r.tv_nsec, next.tv_sec, next.tv_nsec);
             log_message(message, "log_file.log");
         }
 
-        gettimeofday(&end, NULL);
-        uint32_t elapsed = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_usec - start.tv_usec);
-
-        video_task(&temp->thread_id, &temp->wcet, &elapsed);
+        // Duerme hasta el siguiente periodo
         clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
     }
 }

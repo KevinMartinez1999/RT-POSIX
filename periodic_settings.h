@@ -6,7 +6,6 @@ struct PeriodicThread
 	struct timespec r;
 	int thread_id;
 	int period;
-	int offset;
 	uint32_t wcet;
 };
 

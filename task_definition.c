@@ -12,29 +12,27 @@
 
 #include "task_definition.h"
 
-#define MAX_TASKS 10
-
-void *sched_bus_task(int *id, uint32_t *wcet, uint32_t *elapsed_time)
+void *sched_bus_task(uint32_t wcet)
 {
-    usleep(*wcet - *elapsed_time);
+    usleep(wcet);
 }
 
-void *data_task(int *id, uint32_t *wcet, uint32_t *elapsed_time)
+void *data_task(uint32_t wcet)
 {
-    usleep(*wcet - *elapsed_time);
+    usleep(wcet);
 }
 
-void *control_task(int *id, uint32_t *wcet, uint32_t *elapsed_time)
+void *control_task(uint32_t wcet)
 {
-    usleep(*wcet - *elapsed_time);
+    usleep(wcet);
 }
 
-void *radio_task(int *id, uint32_t *wcet, uint32_t *elapsed_time)
+void *radio_task(uint32_t wcet)
 {
-    usleep(*wcet - *elapsed_time);
+    usleep(wcet);
 }
 
-void *video_task(int *id, uint32_t *wcet, uint32_t *elapsed_time)
+void *video_task(uint32_t wcet)
 {
-    usleep(*wcet - *elapsed_time);
+    usleep(wcet);
 }

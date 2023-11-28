@@ -67,10 +67,10 @@ void start_periodic_timer(struct PeriodicThread *perthread)
 {
     // printf("Este hilo tiene un periodo de %d us\n", perthread->period);
     printf("El Hilo %d se ejecutara cada %d us\n", perthread->thread_id, perthread->period);
-    printf("El offset de este hilo es %d us\n\n", perthread->offset);
+    // printf("El offset de este hilo es %d us\n\n", perthread->offset);
 
     clock_gettime(CLOCK_REALTIME, &perthread->r);      // Get current time
-    timespec_add_us(&perthread->r, perthread->offset); // Add offset
+    // timespec_add_us(&perthread->r, perthread->offset); // Add offset
 }
 
 void log_message(const char *message, const char *filename)

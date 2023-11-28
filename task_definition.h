@@ -1,19 +1,10 @@
 #ifndef TASK_DEFINITION_H
 #define TASK_DEFINITION_H
 
-/**
- * TAREAS:
- * 1. SCHED_BUS
- * 2. DATA
- * 3. CONTROL
- * 4. RADIO
- * 5. VIDEO
- */
-
-void *sched_bus_task(int *id, uint32_t *wcet, uint32_t *elapsed_time);
-void *data_task(int *id, uint32_t *wcet, uint32_t *elapsed_time);
-void *control_task(int *id, uint32_t *wcet, uint32_t *elapsed_time);
-void *radio_task(int *id, uint32_t *wcet, uint32_t *elapsed_time);
-void *video_task(int *id, uint32_t *wcet, uint32_t *elapsed_time);
+void *sched_bus_task(uint32_t wcet);
+void *data_task(uint32_t wcet);
+void *control_task(uint32_t wcet);
+void *radio_task(uint32_t wcet);
+void *video_task(uint32_t wcet);
 
 #endif
