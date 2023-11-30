@@ -14,6 +14,7 @@
 #include "periodic_settings.h"
 
 #define NSEC_PER_SEC 1000000000ULL
+// #define DEBUG_MODE
 
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
@@ -32,12 +33,14 @@ void current_time()
 
 void timespec_add_us(struct timespec *t, uint64_t us)
 {
-    t->tv_nsec += us * 1000;
-    if (t->tv_nsec > NSEC_PER_SEC)
+    us *= 1000;
+    us += t->tv_nsec;
+    while (us >= NSEC_PER_SEC)
     {
-        t->tv_nsec -= NSEC_PER_SEC;
+        us -= NSEC_PER_SEC;
         t->tv_sec++;
     }
+    t->tv_nsec = us;
 }
 
 int timespec_cmp(struct timespec *a, struct timespec *b)
@@ -46,31 +49,32 @@ int timespec_cmp(struct timespec *a, struct timespec *b)
         return 1;
     else if (a->tv_sec < b->tv_sec)
         return -1;
-    else if (a->tv_sec == b->tv_sec)
+    else
     {
         if (a->tv_nsec > b->tv_nsec)
             return 1;
-        else if (a->tv_nsec == b->tv_nsec)
-            return 0;
-        else
+        else if (a->tv_nsec < b->tv_nsec)
             return -1;
+        else
+            return 0;
     }
 }
 
-void wait_next_activation(struct PeriodicThread *t)
+void wait_next_activation(struct PeriodicThread *pt)
 {
-    clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &t->r, NULL);
-    timespec_add_us(&t->r, t->period);
+    clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &pt->r, NULL);
+    timespec_add_us(&pt->r, pt->period);
 }
 
-void start_periodic_timer(struct PeriodicThread *perthread)
+void start_periodic_timer(struct PeriodicThread *pt)
 {
-    // printf("Este hilo tiene un periodo de %d us\n", perthread->period);
-    printf("El Hilo %d se ejecutara cada %d us\n", perthread->thread_id, perthread->period);
-    // printf("El offset de este hilo es %d us\n\n", perthread->offset);
+#ifdef DEBUG_MODE
+    printf("El hilo %d tiene un periodo de %d us.\n", pt->thread_id, pt->period);
+    printf("El offset de este hilo es de %d us.\n", pt->offset);
+#endif
 
-    clock_gettime(CLOCK_REALTIME, &perthread->r);      // Get current time
-    // timespec_add_us(&perthread->r, perthread->offset); // Add offset
+    clock_gettime(CLOCK_REALTIME, &pt->r);
+    timespec_add_us(&pt->r, pt->offset);
 }
 
 void log_message(const char *message, const char *filename)
