@@ -11,3 +11,6 @@
 # Executables
 mars_pahtfinder
 mars_pahtfinder_sched
+
+# log
+*.log
