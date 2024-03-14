@@ -1,2 +1,2 @@
 # RT-POSIX
-Implementación en ANSI C, basada en POSIX-RT para un sistema de Tiempo-Real.
+Implementation in ANSI C, based on POSIX-RT for a Real-Time system.
